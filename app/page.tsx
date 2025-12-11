@@ -1,17 +1,45 @@
 // app/page.js
+"use client";
+import { useState } from 'react'; // ต้องใช้ useState hook
 import styles from './home.module.css'; // 1. นำเข้า CSS Module ที่จะสร้าง
-// import Image from 'next/image'; // ถ้ามีรูปภาพจริง ค่อยนำเข้า
+import Image from 'next/image'; // ถ้ามีรูปภาพจริง ค่อยนำเข้า
+import Lightbox from '../components/Lightbox'; // นำเข้า Component Lightbox
 
 export default function HomePage() {
+  // State สำหรับเก็บสถานะการเปิด/ปิด และ URL ของรูปภาพ
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [currentImageSrc, setCurrentImageSrc] = useState('');
+  const [currentImageAlt, setCurrentImageAlt] = useState('');
+
+  // ฟังก์ชันสำหรับเปิด Lightbox
+  const openModal = (src, alt) => {
+    setCurrentImageSrc(src);
+    setCurrentImageAlt(alt);
+    setIsModalOpen(true);
+  };
+
+  // ฟังก์ชันสำหรับปิด Lightbox
+  const closeModal = () => {
+    setIsModalOpen(false);
+    setCurrentImageSrc('');
+    setCurrentImageAlt('');
+  };
+
   return (
     <main className={styles.mainContainer}> 
       
       {/* 1. ส่วน Header / Navigation Bar */}
       <header className={styles.header}>
         <div className={styles.headerContent}>
-          <a href="#" className={styles.logo}>
-            KB Battery
-          </a>
+            <a href="#" className={styles.logo}>
+              <Image
+                src="/images/logo-kb.png" // Path ไปยังไฟล์โลโก้
+                alt="KB Battery Car Logo"
+                width={150} // กำหนดความกว้างที่เหมาะสม
+                height={50} // กำหนดความสูงที่เหมาะสม
+                className={styles.logoImage} // Class ใหม่สำหรับจัดการ Style
+              />
+            </a>
           <nav className={styles.navLinks}>
             <a href="#products">สินค้า</a>
             <a href="#services">บริการ</a>
@@ -101,7 +129,34 @@ export default function HomePage() {
           <h2 className={styles.servicesTitle}>
             บริการ **เปลี่ยนแบตเตอรี่รถยนต์** ที่รวดเร็วและไว้ใจได้
           </h2>
-
+          <div className={styles.infographicContainer}>
+              <h3 className={styles.infographicTitle}>บริการเปลี่ยนแบตเตอรี่รถยนต์นอกสถานที่</h3>
+              <div 
+                className={styles.imageClickable} 
+                onClick={() => openModal('/images/infographic_04.jpg', 'บริการเปลี่ยนแบตเตอรี่รถยนต์นอกสถานที่ KB Battery Car')}
+                >
+              <Image 
+                src="/images/infographic_04.jpg" // Path ไปยัง Infographic เปลี่ยนแบต
+                alt="บริการเปลี่ยนแบตเตอรี่รถยนต์นอกสถานที่ KB Battery Car"
+                width={1200} 
+                height={500} 
+                className={styles.infographicImage}
+              />
+              </div>
+              <h3 className={styles.infographicTitle} style={{marginTop: '2rem'}}>บริการจั๊มแบตฉุกเฉิน</h3>
+              <div 
+                className={styles.imageClickable} 
+                onClick={() => openModal('/images/infographic_03.jpg', 'ขั้นตอนบริการจั๊มแบตเตอรี่รถยนต์นอกสถานที่ KB Battery')}
+                >
+                <Image 
+                  src="/images/infographic_03.jpg" 
+                  alt="ขั้นตอนบริการจั๊มแบตเตอรี่รถยนต์นอกสถานที่ KB Battery"
+                  width={1200} 
+                  height={500} 
+                  className={styles.infographicImage}
+                />
+            </div>
+          </div>
           {/* Grid Layout สำหรับบริการ 3 อย่าง */}
           <div className={styles.serviceGrid}>
             
@@ -189,6 +244,14 @@ export default function HomePage() {
       <footer className={styles.footer}>
         <p>&copy; 2025 KB Battery. All rights reserved.</p>
       </footer>
+      {/* **** เพิ่ม Lightbox Component ไว้ที่นี่ **** */}
+      <Lightbox 
+        isOpen={isModalOpen}
+        src={currentImageSrc}
+        alt={currentImageAlt}
+        onClose={closeModal}
+      />
+
     </main>
   );
 }

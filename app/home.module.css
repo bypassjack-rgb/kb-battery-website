@@ -2,11 +2,12 @@
 
 /* สีหลักที่เราใช้: พื้นหลังดำ, ข้อความขาว, สีเน้นเหลือง */
 :root {
-  --primary-color: #facc15; /* yellow-400 */
-  --secondary-color: #1f2937; /* zinc-800/gray-800 */
-  --background-color: #000000;
-  --text-color: #ffffff;
-  --border-color: #374151; /* gray-700 */
+  --primary-color: #0d47a1; /* น้ำเงินเข้ม (สีเน้นหลักจากโลโก้) */
+  --secondary-color: #f5f5f5; /* ฟ้าอ่อน/ขาว (สีพื้นผิวรอง/การ์ด) */
+  --background-color: #e0f7fa; /* ฟ้าอ่อนมาก (พื้นหลังหลัก) */
+  --text-color: #212121; /* ดำ/เทาเข้ม (ตัวอักษร) */
+  --border-color: #bbdefb; /* ฟ้าอ่อนสำหรับเส้นขอบ */
+    scroll-behavior: smooth;
 }
 
 /* Global Container Styles */
@@ -40,10 +41,17 @@
 }
 
 .logo {
-  font-size: 1.875rem; /* text-3xl */
-  font-weight: 800; /* font-extrabold */
-  color: var(--primary-color);
-  text-decoration: none;
+/*  font-size: 1.875rem; /* text-3xl */
+/* font-weight: 800; /* font-extrabold */
+/*  color: var(--primary-color);*/
+/*  text-decoration: none;*/
+
+}
+
+.logoImage {
+    max-width: 100%;
+    height: auto;
+    /* เพิ่ม style ให้โลโก้แสดงผลดีบนมือถือ */
 }
 
 .navLinks a {
@@ -92,11 +100,12 @@
   font-size: 4.5rem; /* text-7xl */
   font-weight: 700; /* font-bold */
   margin-bottom: 1rem;
+  color: var(--primary-color);
 }
 
 .heroSubtitle {
   font-size: 1.25rem; /* text-xl */
-  color: #9ca3af; /* gray-400 */
+  color: var(--text-color); /* gray-400 */
   max-width: 48rem; /* max-w-3xl */
   margin-left: auto;
   margin-right: auto;
@@ -117,6 +126,8 @@
   font-size: 1.125rem; /* text-lg */
   text-decoration: none;
   transition: background-color 300ms, color 300ms, border-color 300ms;
+  background-color: var(--primary-color);
+  color: white; /* ปุ่มหลักตัวอักษรเป็นสีขาว */
 }
 
 /* Primary Button */
@@ -139,7 +150,7 @@
 
 .ctaButtonSecondary:hover {
   background-color: var(--primary-color);
-  color: var(--background-color);
+  color: white;
 }
 
 
@@ -188,7 +199,7 @@
 
 .productCard:hover {
   transform: scale(1.02);
-  box-shadow: 0 10px 20px rgba(250, 204, 21, 0.2); /* shadow-yellow-500/50 */
+  box-shadow: 0 10px 20px rgba(13, 71, 161, 0.2); /* เงาเป็นสีน้ำเงินเข้ม */
 }
 
 .productImagePlaceholder {
@@ -229,7 +240,7 @@
   width: 100%;
   text-align: center;
   background-color: var(--primary-color);
-  color: var(--background-color);
+  color: white;
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
   border-radius: 9999px;
@@ -237,7 +248,7 @@
 }
 
 .productButton:hover {
-  background-color: #eab308;
+  background-color: #1565c0; /* น้ำเงินที่เข้มขึ้นเล็กน้อย */
 }
 
 .allProductsButtonContainer {
@@ -253,7 +264,7 @@
   padding-bottom: 5rem;
   padding-left: 2rem;
   padding-right: 2rem;
-  background-color: #0d1117; /* สีดำเข้มกว่าพื้นหลังเล็กน้อย */
+  background-color: var(--secondary-color); /* พื้นหลังบริการเป็นสีขาว/ฟ้าอ่อน */
 }
 
 .servicesTitle {
@@ -261,7 +272,7 @@
   font-weight: 700; /* font-bold */
   text-align: center;
   margin-bottom: 3rem;
-  color: var(--text-color);
+  color: var(--primary-color); /* Title เป็นสีน้ำเงินเข้ม */
 }
 
 .serviceGrid {
@@ -306,6 +317,35 @@
   color: #9ca3af;
   font-size: 1rem;
 }
+/* app/home.module.css (ต่อจากโค้ดเดิม) */
+
+/* Infographic Styles */
+.infographicContainer {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 4rem;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  border-radius: 1rem;
+  background-color: white; /* พื้นหลังขาวเพื่อให้ Infographic เด่นชัด */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.infographicTitle {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+    padding-top: 1rem;
+}
+
+.infographicImage {
+  /* ทำให้รูปภาพ Infographic ตอบสนองต่อขนาดจอ */
+  width: 100%;
+  height: auto;
+  max-width: 100%; 
+  object-fit: contain;
+}
 
 /* Footer Styles */
 .footer {
@@ -341,7 +381,7 @@
   grid-template-columns: 1fr; /* Default: Single column for mobile */
   gap: 3rem;
   padding: 2rem;
-  background-color: var(--secondary-color); /* zinc-800 */
+  background-color: var(--secondary-color); /* พื้นหลัง Contact เป็นสีขาว/ฟ้าอ่อน */
   border-radius: 1rem;
 }
 
@@ -394,7 +434,7 @@
   padding: 0.75rem;
   border-radius: 0.5rem;
   border: 1px solid var(--border-color);
-  background-color: #1a1a1a;
+  background-color: white; /* input เป็นสีขาว */
   color: var(--text-color);
 }
 
@@ -423,4 +463,69 @@
 
 .footer p {
   color: #9ca3af; /* gray-500 */
+}
+
+/* Style สำหรับทำให้รูปภาพ Infographic กดได้ และมี Cursor */
+.imageClickable {
+    cursor: pointer;
+    transition: opacity 0.2s;
+}
+.imageClickable:hover {
+    opacity: 0.9;
+}
+
+/* Lightbox Modal Styles */
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.85); /* พื้นหลังดำทึบ */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000; /* ให้แสดงอยู่เหนือทุกองค์ประกอบ */
+  padding: 1rem;
+}
+
+.modalContent {
+  position: relative;
+  background-color: white; /* พื้นหลังรูปภาพ */
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  max-width: 95vw; /* ไม่ให้กว้างเกินไปบนจอใหญ่ */
+  max-height: 95vh; /* ไม่ให้สูงเกินไปบนจอใหญ่ */
+  display: flex;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+}
+
+.lightboxImage {
+  /* ทำให้รูปภาพภายใน modal ตอบสนองต่อขนาดจอ */
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.closeButton {
+  position: absolute;
+  top: -20px;
+  right: -20px;
+  background: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  font-size: 2rem;
+  line-height: 1;
+  cursor: pointer;
+  z-index: 1001;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.closeButton:hover {
+    background-color: #1565c0;
 }
