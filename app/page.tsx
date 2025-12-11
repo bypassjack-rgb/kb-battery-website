@@ -1,65 +1,194 @@
-import Image from "next/image";
+// app/page.js
+import styles from './home.module.css'; // 1. นำเข้า CSS Module ที่จะสร้าง
+// import Image from 'next/image'; // ถ้ามีรูปภาพจริง ค่อยนำเข้า
 
-export default function Home() {
+export default function HomePage() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
+    <main className={styles.mainContainer}> 
+      
+      {/* 1. ส่วน Header / Navigation Bar */}
+      <header className={styles.header}>
+        <div className={styles.headerContent}>
+          <a href="#" className={styles.logo}>
+            KB Battery
           </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
+          <nav className={styles.navLinks}>
+            <a href="#products">สินค้า</a>
+            <a href="#services">บริการ</a>
+            <a href="#reviews">รีวิว</a>
+            <a href="#contact">ติดต่อเรา</a>
+          </nav>
+          <button className={styles.mobileMenuBtn}>☰</button>
+        </div>
+      </header>
+      
+      {/* 2. ส่วน Hero Section */}
+      <section className={styles.heroSection} id="home">
+        <h1 className={styles.heroTitle}>
+          ที่สุดของพลังงาน<br/>เพื่อทุกการขับเคลื่อน
+        </h1>
+        <p className={styles.heroSubtitle}>
+          KB Battery ผู้นำด้านแบตเตอรี่รถยนต์คุณภาพสูง รับประกันความทนทาน
+          พร้อมบริการเปลี่ยนและติดตั้งรวดเร็วถึงที่
+        </p>
+        
+        <div className={styles.heroActions}>
+          <a href="#products" className={styles.ctaButtonPrimary}>
+            สำรวจสินค้า
+          </a>
+          <a href="#contact" className={styles.ctaButtonSecondary}>
+            ติดต่อสอบถาม
           </a>
         </div>
-      </main>
-    </div>
+      </section>
+
+      {/* 3. ส่วนแสดงสินค้าเด่น */}
+      <section className={styles.productsSection} id="products">
+        <div className={styles.sectionContainer}>
+          <h2 className={styles.sectionTitle}>
+            สินค้าแบตเตอรี่คุณภาพ
+          </h2>
+          
+          <div className={styles.productGrid}>
+            
+            {/* สินค้าชิ้นที่ 1: แบตเตอรี่มาตรฐาน */}
+            <div className={styles.productCard}>
+              <div className={styles.productImagePlaceholder}>
+                <span>รูปแบตเตอรี่มาตรฐาน</span>
+              </div>
+              <h3 className={styles.productCardTitle}>แบตเตอรี่รถเก๋ง / รถกระบะทั่วไป</h3>
+              <p className={styles.productCardDesc}>อายุการใช้งานยาวนาน ด้วยเทคโนโลยีแผ่นธาตุที่ทนทานต่อทุกสภาพอากาศ</p>
+              <div className={styles.productPrice}>เริ่มต้น ฿2,500</div>
+              <a href="#" className={styles.productButton}>ดูรายละเอียด</a>
+            </div>
+
+            {/* สินค้าชิ้นที่ 2: แบตเตอรี่สำหรับรถยุโรป/Start-Stop (AGM) */}
+            <div className={styles.productCard}>
+              <div className={styles.productImagePlaceholder}>
+                <span>รูปแบตเตอรี่ AGM</span>
+              </div>
+              <h3 className={styles.productCardTitle}>แบตเตอรี่ AGM (รถยนต์ Start-Stop)</h3>
+              <p className={styles.productCardDesc}>ประสิทธิภาพสูงสำหรับรถยนต์ที่มีระบบ Start-Stop และรถยุโรปชั้นนำ ทนทานต่อการชาร์จ/คายประจุซ้ำ</p>
+              <div className={styles.productPrice}>เริ่มต้น ฿4,800</div>
+              <a href="#" className={styles.productButton}>ดูรายละเอียด</a>
+            </div>
+
+            {/* สินค้าชิ้นที่ 3: แบตเตอรี่เพื่อการพาณิชย์/รถบรรทุก */}
+            <div className={styles.productCard}>
+              <div className={styles.productImagePlaceholder}>
+                <span>รูปแบตเตอรี่รถบรรทุก</span>
+              </div>
+              <h3 className={styles.productCardTitle}>แบตเตอรี่รถบรรทุก / รถเพื่อการพาณิชย์</h3>
+              <p className={styles.productCardDesc}>กำลังไฟสูงสำหรับการใช้งานหนักต่อเนื่อง ทนทานเป็นพิเศษเพื่อการขนส่งระยะยาว</p>
+              <div className={styles.productPrice}>เริ่มต้น ฿3,500</div>
+              <a href="#" className={styles.productButton}>ดูรายละเอียด</a>
+            </div>
+            
+          </div>
+          
+          <div className={styles.allProductsButtonContainer}>
+            <a href="#" className={styles.ctaButtonSecondary}>
+              ดูแคตตาล็อกทั้งหมด
+            </a>
+          </div>
+
+        </div>
+      </section>
+      {/* 4. ส่วนแสดงบริการเด่น (Services Section - เน้น SEO) */}
+      <section className={styles.servicesSection} id="services">
+        <div className={styles.sectionContainer}>
+          
+          <h2 className={styles.servicesTitle}>
+            บริการ **เปลี่ยนแบตเตอรี่รถยนต์** ที่รวดเร็วและไว้ใจได้
+          </h2>
+
+          {/* Grid Layout สำหรับบริการ 3 อย่าง */}
+          <div className={styles.serviceGrid}>
+            
+            {/* บริการที่ 1: ติดตั้งฟรี (เน้นราคา) */}
+            <div className={styles.serviceCard}>
+              <span className={styles.serviceIcon}>⚡️</span> 
+              <h3 className={styles.serviceCardTitle}>ฟรี! ค่าติดตั้งทุกรุ่น</h3>
+              <p className={styles.serviceCardDesc}>
+                ไม่ต้องกังวลเรื่องค่าใช้จ่ายแอบแฝง เราบริการ **เปลี่ยนแบตเตอรี่รถยนต์** ให้คุณฟรี! ณ จุดติดตั้ง
+              </p>
+            </div>
+
+            {/* บริการที่ 2: บริการนอกสถานที่ (เน้นความสะดวก) */}
+            <div className={styles.serviceCard}>
+              <span className={styles.serviceIcon}>📍</span>
+              <h3 className={styles.serviceCardTitle}>รวดเร็วทันใจ บริการถึงที่</h3>
+              <p className={styles.serviceCardDesc}>
+                ไม่ว่าจะที่บ้าน ที่ทำงาน หรือบนท้องถนน ทีมงานของเราพร้อมไป **เปลี่ยนแบตเตอรี่รถยนต์** ให้คุณถึงที่ในเวลาอันรวดเร็ว
+              </p>
+            </div>
+
+            {/* บริการที่ 3: รับประกันคุณภาพ (เน้นความมั่นใจ) */}
+            <div className={styles.serviceCard}>
+              <span className={styles.serviceIcon}>🛡️</span>
+              <h3 className={styles.serviceCardTitle}>รับประกันคุณภาพ 100%</h3>
+              <p className={styles.serviceCardDesc}>
+                แบตเตอรี่ทุกลูกของ KB Battery มีการรับประกันอย่างเป็นทางการ เพื่อให้คุณมั่นใจในผลิตภัณฑ์และบริการของเรา
+              </p>
+            </div>
+            
+          </div>
+          
+        </div>
+      </section>
+{/* 5. ส่วนแบบฟอร์มติดต่อ (Contact Section) */}
+      <section className={styles.contactSection} id="contact">
+        <div className={styles.sectionContainer}>
+          
+          <h2 className={styles.contactTitle}>
+            **ติดต่อเรา** เพื่อสอบถาม **ราคาแบตเตอรี่รถยนต์** และบริการติดตั้ง
+          </h2>
+          
+          <div className={styles.contactContent}>
+            
+            {/* ฝั่งซ้าย: ข้อมูลติดต่อหลัก */}
+            <div className={styles.contactInfo}>
+              <p className={styles.infoText}>
+                ทีมงาน KB Battery พร้อมให้บริการและตอบทุกข้อสงสัยเกี่ยวกับแบตเตอรี่รถยนต์
+                กรุณากรอกแบบฟอร์มด้านข้าง หรือเลือกช่องทางติดต่อที่สะดวกด้านล่างนี้
+              </p>
+              
+              <div className={styles.contactDetail}>
+                <p>📞 โทรศัพท์:</p>
+                <a href="tel:09xxxxxxxxx" className={styles.contactLink}>09X-XXX-XXXX</a>
+              </div>
+              
+              <div className={styles.contactDetail}>
+                <p>💬 Line ID:</p>
+                <span className={styles.contactLink}>@kbbattery</span>
+              </div>
+              
+              <div className={styles.contactDetail}>
+                <p>📧 อีเมล:</p>
+                <a href="mailto:contact@kbbattery.com" className={styles.contactLink}>contact@kbbattery.com</a>
+              </div>
+            </div>
+
+            {/* ฝั่งขวา: แบบฟอร์มติดต่อ (Form Placeholder) */}
+            {/* ใน Next.js การสร้าง Form ต้องจัดการ State และการส่งข้อมูล ซึ่งจะซับซ้อนขึ้น
+               ในขั้นตอนนี้ เราจะสร้างโครงสร้าง HTML/CSS ไว้ก่อน */}
+            <form className={styles.contactForm}>
+              <input type="text" placeholder="ชื่อ - นามสกุล" className={styles.formInput} required />
+              <input type="tel" placeholder="เบอร์โทรศัพท์ที่ติดต่อได้" className={styles.formInput} required />
+              <input type="text" placeholder="ยี่ห้อและรุ่นรถยนต์" className={styles.formInput} />
+              <textarea placeholder="ข้อความ / คำถามเพิ่มเติม" rows="4" className={styles.formTextarea} required></textarea>
+              <button type="submit" className={styles.formSubmitButton}>
+                ส่งข้อความ
+              </button>
+            </form>
+          </div>
+
+        </div>
+      </section>
+      {/* Footer ยังคงอยู่ที่เดิม */}
+      <footer className={styles.footer}>
+        <p>&copy; 2025 KB Battery. All rights reserved.</p>
+      </footer>
+    </main>
   );
 }

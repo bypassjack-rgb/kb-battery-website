@@ -1,0 +1,426 @@
+/* app/home.module.css */
+
+/* สีหลักที่เราใช้: พื้นหลังดำ, ข้อความขาว, สีเน้นเหลือง */
+:root {
+  --primary-color: #facc15; /* yellow-400 */
+  --secondary-color: #1f2937; /* zinc-800/gray-800 */
+  --background-color: #000000;
+  --text-color: #ffffff;
+  --border-color: #374151; /* gray-700 */
+}
+
+/* Global Container Styles */
+.mainContainer {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+/* Header Styles */
+.header {
+  width: 100%;
+  padding: 1rem 2rem; /* py-4 px-8 */
+  border-bottom: 1px solid var(--border-color);
+  position: fixed;
+  top: 0;
+  background-color: var(--background-color);
+  z-index: 10;
+}
+
+.headerContent {
+  max-width: 1280px; /* max-w-7xl */
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 1.875rem; /* text-3xl */
+  font-weight: 800; /* font-extrabold */
+  color: var(--primary-color);
+  text-decoration: none;
+}
+
+.navLinks a {
+  margin-left: 2rem;
+  color: var(--text-color);
+  transition: color 300ms;
+  text-decoration: none;
+}
+
+.navLinks a:hover {
+  color: var(--primary-color);
+}
+
+.mobileMenuBtn {
+  display: none;
+}
+
+@media (min-width: 768px) { /* md:flex */
+  .navLinks {
+    display: flex;
+  }
+}
+
+@media (max-width: 767px) { /* md:hidden */
+  .mobileMenuBtn {
+    display: block;
+    font-size: 1.5rem;
+  }
+  .navLinks {
+    display: none;
+  }
+}
+
+/* Hero Section */
+.heroSection {
+  text-align: center;
+  padding-top: 10rem; /* py-40 */
+  padding-bottom: 10rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  margin-top: 4rem; /* mt-16 */
+  width: 100%;
+}
+
+.heroTitle {
+  font-size: 4.5rem; /* text-7xl */
+  font-weight: 700; /* font-bold */
+  margin-bottom: 1rem;
+}
+
+.heroSubtitle {
+  font-size: 1.25rem; /* text-xl */
+  color: #9ca3af; /* gray-400 */
+  max-width: 48rem; /* max-w-3xl */
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 2.5rem;
+}
+
+.heroActions {
+  display: flex;
+  justify-content: center;
+  gap: 1rem; /* space-x-4 */
+}
+
+/* Button Base Styles */
+.ctaButtonPrimary, .ctaButtonSecondary, .productButton {
+  padding: 0.75rem 2.5rem; /* py-3 px-10 */
+  border-radius: 9999px; /* rounded-full */
+  font-weight: 600; /* font-semibold */
+  font-size: 1.125rem; /* text-lg */
+  text-decoration: none;
+  transition: background-color 300ms, color 300ms, border-color 300ms;
+}
+
+/* Primary Button */
+.ctaButtonPrimary {
+  background-color: var(--primary-color);
+  color: var(--background-color);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.ctaButtonPrimary:hover {
+  background-color: #eab308; /* yellow-500 */
+}
+
+/* Secondary Button */
+.ctaButtonSecondary {
+  border: 2px solid var(--primary-color);
+  color: var(--primary-color);
+  background-color: transparent;
+}
+
+.ctaButtonSecondary:hover {
+  background-color: var(--primary-color);
+  color: var(--background-color);
+}
+
+
+/* Product Section Styles */
+.productsSection {
+  width: 100%;
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+.sectionContainer {
+  max-width: 1280px; /* max-w-7xl */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.sectionTitle {
+  font-size: 3rem; /* text-5xl */
+  font-weight: 700; /* font-bold */
+  text-align: center;
+  margin-bottom: 4rem;
+  color: var(--primary-color);
+}
+
+.productGrid {
+  display: grid;
+  grid-template-columns: repeat(1, minmax(0, 1fr)); /* grid-cols-1 */
+  gap: 2.5rem; /* gap-10 */
+}
+
+@media (min-width: 768px) {
+  .productGrid {
+    grid-template-columns: repeat(3, minmax(0, 1fr)); /* md:grid-cols-3 */
+  }
+}
+
+.productCard {
+  background-color: var(--secondary-color);
+  padding: 1.5rem; /* p-6 */
+  border-radius: 0.75rem; /* rounded-xl */
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  transition: transform 500ms, box-shadow 500ms;
+}
+
+.productCard:hover {
+  transform: scale(1.02);
+  box-shadow: 0 10px 20px rgba(250, 204, 21, 0.2); /* shadow-yellow-500/50 */
+}
+
+.productImagePlaceholder {
+  position: relative;
+  width: 100%;
+  height: 10rem; /* h-40 */
+  margin-bottom: 1rem;
+  background-color: #4b5563; /* gray-700 */
+  border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  color: var(--primary-color);
+}
+
+.productCardTitle {
+  font-size: 1.5rem; /* text-2xl */
+  font-weight: 600; /* font-semibold */
+  margin-bottom: 0.5rem;
+}
+
+.productCardDesc {
+  color: #9ca3af; /* gray-400 */
+  margin-bottom: 1rem;
+  font-size: 0.875rem; /* text-sm */
+}
+
+.productPrice {
+  font-size: 1.875rem; /* text-3xl */
+  font-weight: 700; /* font-bold */
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+}
+
+.productButton {
+  display: block;
+  width: 100%;
+  text-align: center;
+  background-color: var(--primary-color);
+  color: var(--background-color);
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  border-radius: 9999px;
+  font-weight: 700;
+}
+
+.productButton:hover {
+  background-color: #eab308;
+}
+
+.allProductsButtonContainer {
+  text-align: center;
+  margin-top: 3rem;
+}
+/* app/home.module.css (ต่อจากโค้ดเดิม) */
+
+/* Services Section Styles */
+.servicesSection {
+  width: 100%;
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  background-color: #0d1117; /* สีดำเข้มกว่าพื้นหลังเล็กน้อย */
+}
+
+.servicesTitle {
+  font-size: 3rem; /* text-5xl */
+  font-weight: 700; /* font-bold */
+  text-align: center;
+  margin-bottom: 3rem;
+  color: var(--text-color);
+}
+
+.serviceGrid {
+  display: grid;
+  grid-template-columns: repeat(1, minmax(0, 1fr)); /* grid-cols-1 */
+  gap: 2rem;
+}
+
+@media (min-width: 768px) {
+  .serviceGrid {
+    grid-template-columns: repeat(3, minmax(0, 1fr)); /* md:grid-cols-3 */
+  }
+}
+
+.serviceCard {
+  background-color: var(--secondary-color); /* zinc-800 */
+  padding: 2rem;
+  border-radius: 0.75rem;
+  text-align: center;
+  transition: transform 300ms;
+}
+
+.serviceCard:hover {
+  transform: translateY(-5px);
+  border: 1px solid var(--primary-color);
+}
+
+.serviceIcon {
+  font-size: 3rem;
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.serviceCardTitle {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: var(--primary-color);
+}
+
+.serviceCardDesc {
+  color: #9ca3af;
+  font-size: 1rem;
+}
+
+/* Footer Styles */
+.footer {
+  width: 100%;
+  text-align: center;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+  border-top: 1px solid var(--border-color);
+  margin-top: auto;
+}
+/* Contact Section Styles */
+.contactSection {
+  width: 100%;
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  background-color: var(--background-color);
+}
+
+.contactTitle {
+  font-size: 3rem; /* text-5xl */
+  font-weight: 700; /* font-bold */
+  text-align: center;
+  margin-bottom: 3rem;
+  color: var(--primary-color);
+}
+
+.contactContent {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr; /* Default: Single column for mobile */
+  gap: 3rem;
+  padding: 2rem;
+  background-color: var(--secondary-color); /* zinc-800 */
+  border-radius: 1rem;
+}
+
+@media (min-width: 768px) {
+  .contactContent {
+    grid-template-columns: 1.5fr 2fr; /* 2 columns for desktop */
+  }
+}
+
+/* Contact Info Styles */
+.contactInfo {
+  padding-right: 1.5rem;
+}
+
+.infoText {
+  color: #9ca3af;
+  margin-bottom: 2rem;
+}
+
+.contactDetail {
+  margin-bottom: 1rem;
+  border-bottom: 1px dashed var(--border-color);
+  padding-bottom: 0.5rem;
+}
+
+.contactDetail p {
+  font-weight: 600;
+  color: var(--primary-color);
+  margin-bottom: 0.25rem;
+}
+
+.contactLink {
+  color: var(--text-color);
+  text-decoration: none;
+  font-size: 1.125rem;
+}
+
+.contactLink:hover {
+  color: var(--primary-color);
+}
+
+/* Contact Form Styles */
+.contactForm {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.formInput, .formTextarea {
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  border: 1px solid var(--border-color);
+  background-color: #1a1a1a;
+  color: var(--text-color);
+}
+
+.formInput::placeholder, .formTextarea::placeholder {
+  color: #6b7280;
+}
+
+.formTextarea {
+  resize: vertical;
+}
+
+.formSubmitButton {
+  background-color: var(--primary-color);
+  color: var(--background-color);
+  font-weight: 700;
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  border: none;
+  cursor: pointer;
+  transition: background-color 300ms;
+}
+
+.formSubmitButton:hover {
+  background-color: #eab308; /* yellow-500 */
+}
+
+.footer p {
+  color: #9ca3af; /* gray-500 */
+}
