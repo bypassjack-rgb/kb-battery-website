@@ -4,6 +4,7 @@ import { useState } from 'react'; // ต้องใช้ useState hook
 import styles from './home.module.css'; // 1. นำเข้า CSS Module ที่จะสร้าง
 import Image from 'next/image'; // ถ้ามีรูปภาพจริง ค่อยนำเข้า
 import Lightbox from '../components/Lightbox'; // นำเข้า Component Lightbox
+import HeroSlideshow from '../components/HeroSlideshow'; // นำเข้า Component HeroSlideshow
 
 export default function HomePage() {
   // State สำหรับเก็บสถานะการเปิด/ปิด และ URL ของรูปภาพ
@@ -41,9 +42,10 @@ export default function HomePage() {
               />
             </a>
           <nav className={styles.navLinks}>
-            <a href="#products">สินค้า</a>
-            <a href="#services">บริการ</a>
-            <a href="#reviews">รีวิว</a>
+            <a href="#services">บริการของเรา</a>        
+            <a href="#brands">ยี่ห้อแบตเตอรี่</a>      
+            <a href="#reviews">รีวิว</a>            
+            <a href="#features">จุดเด่น</a>           
             <a href="#contact">ติดต่อเรา</a>
           </nav>
           <button className={styles.mobileMenuBtn}>☰</button>
@@ -52,26 +54,11 @@ export default function HomePage() {
       
       {/* 2. ส่วน Hero Section */}
       <section className={styles.heroSection} id="home">
-        <h1 className={styles.heroTitle}>
-          ที่สุดของพลังงาน<br/>เพื่อทุกการขับเคลื่อน
-        </h1>
-        <p className={styles.heroSubtitle}>
-          KB Battery ผู้นำด้านแบตเตอรี่รถยนต์คุณภาพสูง รับประกันความทนทาน
-          พร้อมบริการเปลี่ยนและติดตั้งรวดเร็วถึงที่
-        </p>
-        
-        <div className={styles.heroActions}>
-          <a href="#products" className={styles.ctaButtonPrimary}>
-            สำรวจสินค้า
-          </a>
-          <a href="#contact" className={styles.ctaButtonSecondary}>
-            ติดต่อสอบถาม
-          </a>
-        </div>
+        <HeroSlideshow />
       </section>
 
       {/* 3. ส่วนแสดงสินค้าเด่น */}
-      <section className={styles.productsSection} id="products">
+      <section className={styles.productsSection} id="brands">
         <div className={styles.sectionContainer}>
           <h2 className={styles.sectionTitle}>
             สินค้าแบตเตอรี่คุณภาพ
@@ -115,7 +102,7 @@ export default function HomePage() {
           </div>
           
           <div className={styles.allProductsButtonContainer}>
-            <a href="#" className={styles.ctaButtonSecondary}>
+            <a href="#brands" className={styles.ctaButtonSecondary}>
               ดูแคตตาล็อกทั้งหมด
             </a>
           </div>
@@ -183,12 +170,24 @@ export default function HomePage() {
               <span className={styles.serviceIcon}>🛡️</span>
               <h3 className={styles.serviceCardTitle}>รับประกันคุณภาพ 100%</h3>
               <p className={styles.serviceCardDesc}>
-                แบตเตอรี่ทุกลูกของ KB Battery มีการรับประกันอย่างเป็นทางการ เพื่อให้คุณมั่นใจในผลิตภัณฑ์และบริการของเรา
+                แบตเตอรี่ทุกลูกของ KB Battery Car มีการรับประกันอย่างเป็นทางการ เพื่อให้คุณมั่นใจในผลิตภัณฑ์และบริการของเรา
               </p>
             </div>
             
           </div>
           
+        </div>
+      </section>
+      {/* 5. ส่วนแสดงจุดเด่น/เหตุผลที่ควรเลือก (Features Section) */}
+      <section className={styles.featuresSection} id="features">
+        <div className={styles.sectionContainer}>
+          <h2 className={styles.featuresTitle}>
+            ทำไมลูกค้าถึงเลือก KB Battery Car
+          </h2>
+          {/* ส่วนนี้ยังว่างเปล่า เราจะใส่เนื้อหาในขั้นตอนถัดไป */}
+          <div className={styles.featuresContent}>
+             {/* Placeholder for Feature Cards */}
+          </div>
         </div>
       </section>
 {/* 5. ส่วนแบบฟอร์มติดต่อ (Contact Section) */}
@@ -204,23 +203,30 @@ export default function HomePage() {
             {/* ฝั่งซ้าย: ข้อมูลติดต่อหลัก */}
             <div className={styles.contactInfo}>
               <p className={styles.infoText}>
-                ทีมงาน KB Battery พร้อมให้บริการและตอบทุกข้อสงสัยเกี่ยวกับแบตเตอรี่รถยนต์
+                ทีมงาน KB Battery Car พร้อมให้บริการและตอบทุกข้อสงสัยเกี่ยวกับแบตเตอรี่รถยนต์
                 กรุณากรอกแบบฟอร์มด้านข้าง หรือเลือกช่องทางติดต่อที่สะดวกด้านล่างนี้
               </p>
               
               <div className={styles.contactDetail}>
                 <p>📞 โทรศัพท์:</p>
-                <a href="tel:09xxxxxxxxx" className={styles.contactLink}>09X-XXX-XXXX</a>
+                <a href="tel:0623736168" className={styles.contactLink}>062-373-6168</a>
               </div>
               
               <div className={styles.contactDetail}>
                 <p>💬 Line ID:</p>
-                <span className={styles.contactLink}>@kbbattery</span>
+                {/* ใช้ LINE ID ธรรมดา: kbbattry */}
+                <a 
+                  href="http://line.me/ti/p/~kbbattry"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={styles.contactLink}
+                >
+                  kbbattry
+                </a>
               </div>
-              
               <div className={styles.contactDetail}>
                 <p>📧 อีเมล:</p>
-                <a href="mailto:contact@kbbattery.com" className={styles.contactLink}>contact@kbbattery.com</a>
+                <a href="mailto:tinnakorn16888@gmail.com" className={styles.contactLink}>tinnakorn16888@gmail.com</a>
               </div>
             </div>
 
@@ -240,6 +246,34 @@ export default function HomePage() {
 
         </div>
       </section>
+
+      {/* ********** FLOATING ACTION BUTTONS (FAB) ********** */}
+          <div className={styles.floatingButtonsContainer}>
+
+            {/* 1. ปุ่ม LINE (ด้านบน) */}
+            <a 
+              href="https://line.me/ti/p/~kbbattry"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={`${styles.fabButton} ${styles.fabLine}`}
+              title="แอดไลน์สอบถาม: kbbattry"
+            >
+              {/* ไอคอน Line (สมมติใช้ไอคอนง่ายๆ หรือ SVG/Image ของ Line) */}
+              <span style={{ fontSize: '1.8rem' }}>&#x2709;</span> 
+            </a>
+
+            {/* 2. ปุ่ม CALL (ด้านล่าง, มี Animation) */}
+            <a 
+              href="tel:0623736168"
+              className={`${styles.fabButton} ${styles.fabCall} ${styles.fabCallAnimate}`}
+              title="โทรด่วน: 062-373-6168"
+            >
+              {/* ไอคอนโทรศัพท์ (สมมติใช้ไอคอนง่ายๆ) */}
+              <span style={{ fontSize: '1.8rem' }}>&#x260E;</span> 
+            </a>
+            
+          </div>
+          {/* ********** END FABs ********** */}
       {/* Footer ยังคงอยู่ที่เดิม */}
       <footer className={styles.footer}>
         <p>&copy; 2025 KB Battery. All rights reserved.</p>
