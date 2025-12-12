@@ -237,7 +237,7 @@ export default function HomePage() {
               <input type="text" placeholder="ชื่อ - นามสกุล" className={styles.formInput} required />
               <input type="tel" placeholder="เบอร์โทรศัพท์ที่ติดต่อได้" className={styles.formInput} required />
               <input type="text" placeholder="ยี่ห้อและรุ่นรถยนต์" className={styles.formInput} />
-              <textarea placeholder="ข้อความ / คำถามเพิ่มเติม" rows="4" className={styles.formTextarea} required></textarea>
+              <textarea placeholder="ข้อความ / คำถามเพิ่มเติม" rows={4} className={styles.formTextarea} required></textarea>
               <button type="submit" className={styles.formSubmitButton}>
                 ส่งข้อความ
               </button>
