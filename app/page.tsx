@@ -13,11 +13,11 @@ export default function HomePage() {
   const [currentImageAlt, setCurrentImageAlt] = useState('');
 
   // ฟังก์ชันสำหรับเปิด Lightbox
-  const openModal = (src, alt) => {
+  const openModal = (src: string, alt: string) => { // <--- เพิ่ม : string ให้ src และ alt
     setCurrentImageSrc(src);
     setCurrentImageAlt(alt);
     setIsModalOpen(true);
-  };
+};
 
   // ฟังก์ชันสำหรับปิด Lightbox
   const closeModal = () => {
