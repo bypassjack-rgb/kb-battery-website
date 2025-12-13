@@ -117,7 +117,24 @@
   justify-content: center;
   gap: 1rem; /* space-x-4 */
 }
+/* ปุ่มโทรศัพท์ (ใช้ Primary Style) แต่เปลี่ยนสีพื้นหลังเป็นสีแดง */
+.ctaButtonPrimary {
+    /* ใช้ Style พื้นฐานจากด้านบน แต่ override สี */
+    background-color: #CC0000 !important; /* สีแดงสำหรับโทรด่วน */
+    color: white !important; /* ตัวอักษรต้องเป็นสีขาว */
+}
 
+/* ปุ่ม LINE (ต้องเปลี่ยนชื่อ Class ใน HeroSlideshow.js) */
+.ctaLineStyle { /* <--- ตั้งชื่อใหม่ให้ตรงกับปุ่ม LINE ใน JS */
+    background-color: #06C755; /* สีเขียว LINE */
+    color: white; 
+    border: none; /* ไม่มีขอบ */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.ctaLineStyle:hover {
+    background-color: #00b34d; /* สีเขียวเข้มขึ้นเมื่อ hover */
+}
 /* Button Base Styles */
 .ctaButtonPrimary, .ctaButtonSecondary, .productButton {
   padding: 0.75rem 2.5rem; /* py-3 px-10 */
