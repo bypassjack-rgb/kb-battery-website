@@ -77,7 +77,7 @@ export default function HeroSlideshow() {
                           className={`${styles.ctaButtonPrimary} ${styles.ctaAnimate}`}
                       >
                           <FaPhoneAlt style={{ marginRight: '8px' }} /> {/* <--- เปลี่ยนเป็น FaPhoneAlt */}
-                          โทรเรียกช่างด่วน
+                       0623736168
                       </a>
                       
                       {/* 2. ปุ่ม LINE: "แอดไลน์สอบถาม" */}
