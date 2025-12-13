@@ -924,6 +924,18 @@
     background-color: #00b34d; /* สีเขียวเข้มขึ้นเมื่อ hover */
 }
 /* สไตล์ไอคอนภายในปุ่ม LINE */
+* เลือกเฉพาะ SVG (ไอคอน) ที่อยู่ภายในปุ่มที่มี class ctaButtonPrimary และ ctaLineStyle */
+.ctaButtonPrimary svg, 
 .ctaLineStyle svg {
-    font-size: 1.4rem; /* กำหนดขนาดไอคอน LINE */
-      }
+    /* บังคับให้ไอคอนอยู่ตรงกลางแนวตั้ง */
+    vertical-align: middle !important; 
+    
+    /* กำหนดขนาดไอคอน */
+    font-size: 1.4rem !important; 
+    
+    /* กำหนดระยะห่างด้านขวา (จากโค้ดเดิม) */
+    margin-right: 8px !important; 
+    
+    /* เพื่อความชัวร์ (บางครั้งจำเป็น) */
+    display: inline-block !important; 
+  }
