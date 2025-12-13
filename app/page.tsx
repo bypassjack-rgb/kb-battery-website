@@ -97,7 +97,7 @@ export default function HomePage() {
               <div className={styles.productImagePlaceholder}>
                 <span>รูปแบตเตอรี่รถบรรทุก</span>
               </div>
-              <h3 className={styles.productCardTแบตเตอรี่รถบรรทุกบรรทุก / รถเพื่อการพาณิชย์</h3>
+              <h3 className={styles.productCardTitle}>แบตเตอรี่รถบรรทุกบรรทุก / รถเพื่อการพาณิชย์</h3>
               <p className={styles.productCardDesc}>กำลังไฟสูงสำหรับการใช้งานหนักต่อเนื่อง ทนทานเป็นพิเศษเพื่อการขนส่งระยะยาว</p>
               <div className={styles.productPrice}>ติดต่อสอบถามเรา</div>
               <a href="http://line.me/ti/p/~kbbattry"
