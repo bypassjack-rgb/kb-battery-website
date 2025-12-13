@@ -73,8 +73,10 @@ export default function HomePage() {
               </div>
               <h3 className={styles.productCardTitle}>แบตเตอรี่รถเก๋ง / รถกระบะทั่วไป</h3>
               <p className={styles.productCardDesc}>อายุการใช้งานยาวนาน ด้วยเทคโนโลยีแผ่นธาตุที่ทนทานต่อทุกสภาพอากาศ</p>
-              <div className={styles.productPrice}>เริ่มต้น ฿2,500</div>
-              <a href="#" className={styles.productButton}>ดูรายละเอียด</a>
+              <div className={styles.productPrice}>เริ่มต้น ฿1,800</div>
+              <a href="http://line.me/ti/p/~kbbattry"
+                  target="_blank"
+                  rel="noopener noreferrer" className={styles.productButton}>สอบถามรายละเอียด</a>
             </div>
 
             {/* สินค้าชิ้นที่ 2: แบตเตอรี่สำหรับรถยุโรป/Start-Stop (AGM) */}
@@ -83,9 +85,11 @@ export default function HomePage() {
                 <span>รูปแบตเตอรี่ AGM</span>
               </div>
               <h3 className={styles.productCardTitle}>แบตเตอรี่ AGM (รถยนต์ Start-Stop)</h3>
-              <p className={styles.productCardDesc}>ประสิทธิภาพสูงสำหรับรถยนต์ที่มีระบบ Start-Stop และรถยุโรปชั้นนำ ทนทานต่อการชาร์จ/คายประจุซ้ำ</p>
-              <div className={styles.productPrice}>เริ่มต้น ฿4,800</div>
-              <a href="#" className={styles.productButton}>ดูรายละเอียด</a>
+              <p className={styles.productCardDesc}>ติดต่อเรา Start-Stop และรถยุโรปชั้นนำ ทนทานต่อการชาร์จ/คายประจุซ้ำ</p>
+              <div className={styles.productPrice}>ติดต่อสอบถามเรา</div>
+              <a href="http://line.me/ti/p/~kbbattry"
+                  target="_blank"
+                  rel="noopener noreferrer" className={styles.productButton}>ติดต่อ kbbattry</a>
             </div>
 
             {/* สินค้าชิ้นที่ 3: แบตเตอรี่เพื่อการพาณิชย์/รถบรรทุก */}
@@ -93,10 +97,12 @@ export default function HomePage() {
               <div className={styles.productImagePlaceholder}>
                 <span>รูปแบตเตอรี่รถบรรทุก</span>
               </div>
-              <h3 className={styles.productCardTitle}>แบตเตอรี่รถบรรทุก / รถเพื่อการพาณิชย์</h3>
+              <h3 className={styles.productCardTแบตเตอรี่รถบรรทุกบรรทุก / รถเพื่อการพาณิชย์</h3>
               <p className={styles.productCardDesc}>กำลังไฟสูงสำหรับการใช้งานหนักต่อเนื่อง ทนทานเป็นพิเศษเพื่อการขนส่งระยะยาว</p>
-              <div className={styles.productPrice}>เริ่มต้น ฿3,500</div>
-              <a href="#" className={styles.productButton}>ดูรายละเอียด</a>
+              <div className={styles.productPrice}>ติดต่อสอบถามเรา</div>
+              <a href="http://line.me/ti/p/~kbbattry"
+                  target="_blank"
+                  rel="noopener noreferrer" className={styles.productButton}>BATTRY</a>
             </div>
             
           </div>
