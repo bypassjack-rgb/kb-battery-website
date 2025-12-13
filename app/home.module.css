@@ -813,3 +813,45 @@
         box-shadow: 0 0 0 0 rgba(13, 71, 161, 0);
     }
 }
+
+/* A. Keyframes สำหรับ Animation */
+@keyframes cta-pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+/* B. Class สำหรับ Animation */
+.ctaAnimate {
+    animation: cta-pulse 1s ease-in-out infinite; /* ขยับเบาๆ 1 วินาที ทำซ้ำ */
+      }
+/* 1. จัดเรียงปุ่มให้เข้าคู่กัน */
+.heroCtaButtons {
+    display: flex; /* ทำให้ปุ่มอยู่บรรทัดเดียวกัน */
+    flex-wrap: wrap; /* ให้ขึ้นบรรทัดใหม่ถ้าจอแคบ */
+    gap: 15px; /* ระยะห่างระหว่างปุ่ม */
+    margin-top: 30px; /* ระยะห่างจากข้อความด้านบน */
+}
+
+/* 2. จัดรูปแบบพื้นฐานของปุ่ม */
+.heroCtaButton {
+    display: inline-flex;
+    align-items: center;
+    padding: 12px 25px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: background-color 0.3s, transform 0.3s;
+    color: white; /* ข้อความสีขาว */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* 3. กำหนดสีเฉพาะ */
+.ctaLine {
+    background-color: #06C755; /* สีเขียว LINE */
+}
+
+.ctaCall {
+    background-color: #CC0000; /* สีแดงโดดเด่นสำหรับโทร */
+  }
