@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
+import { FaLine, FaPhoneAlt } from 'react-icons/fa';
 import styles from '../app/home.module.css';
 
 // รายการรูปภาพสำหรับ Slideshow
