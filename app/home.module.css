@@ -924,7 +924,7 @@
     background-color: #00b34d; /* สีเขียวเข้มขึ้นเมื่อ hover */
 }
 /* สไตล์ไอคอนภายในปุ่ม LINE */
-* เลือกเฉพาะ SVG (ไอคอน) ที่อยู่ภายในปุ่มที่มี class ctaButtonPrimary และ ctaLineStyle */
+/* เลือกเฉพาะ SVG (ไอคอน) ที่อยู่ภายในปุ่มที่มี class ctaButtonPrimary และ ctaLineStyle */
 .ctaButtonPrimary svg, 
 .ctaLineStyle svg {
     /* บังคับให้ไอคอนอยู่ตรงกลางแนวตั้ง */
