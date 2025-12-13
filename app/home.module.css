@@ -872,3 +872,58 @@
 .ctaCall {
     background-color: #CC0000; /* สีแดงโดดเด่นสำหรับโทร */
   }
+/* ********** สไตล์เฉพาะสำหรับปุ่ม LINE และ CALL ใน HERO SECTION ********** */
+
+/* 1. Animation Class (หากยังไม่เพิ่ม) */
+@keyframes cta-pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); } 
+    100% { transform: scale(1); }
+}
+
+.ctaAnimate {
+    animation: cta-pulse 1s ease-in-out infinite; /* ปุ่มโทรศัพท์จะขยับ */
+}
+
+
+/* 2. OVERRIDE สี/Style ของปุ่ม CALL (ctaButtonPrimary) */
+/* ใช้ Class เดิม แต่กำหนดสีใหม่ให้โดดเด่น */
+.ctaButtonPrimary { 
+    background-color: #CC0000 !important; /* สีแดงสำหรับโทรด่วน */
+    color: white !important; /* ตัวอักษรสีขาว */
+    border: none !important; /* ลบขอบเดิมออก */
+    /* ถ้าต้องการให้ใหญ่ขึ้น: */
+    padding: 15px 30px !important;
+    font-size: 1.2rem !important; /* ขนาดตัวอักษรใหญ่ขึ้น */
+}
+/* สไตล์ไอคอนภายในปุ่ม CALL */
+.ctaButtonPrimary svg {
+    font-size: 1.4rem; /* กำหนดขนาดไอคอนโทรศัพท์ */
+}
+
+
+/* 3. ปุ่ม LINE (ctaLineStyle) */
+/* กำหนด Style ให้ Class ที่สร้างขึ้นใหม่ */
+.ctaLineStyle { 
+    display: inline-flex;
+    align-items: center;
+    padding: 15px 30px; /* ขนาดเท่าปุ่ม Call */
+    font-size: 1.2rem; /* ขนาดตัวอักษรเท่าปุ่ม Call */
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 9999px; /* rounded-full */
+    
+    background-color: #06C755; /* สีเขียว LINE */
+    color: white; 
+    border: none;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s;
+}
+
+.ctaLineStyle:hover {
+    background-color: #00b34d; /* สีเขียวเข้มขึ้นเมื่อ hover */
+}
+/* สไตล์ไอคอนภายในปุ่ม LINE */
+.ctaLineStyle svg {
+    font-size: 1.4rem; /* กำหนดขนาดไอคอน LINE */
+      }
