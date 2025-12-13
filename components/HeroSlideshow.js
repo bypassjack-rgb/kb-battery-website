@@ -85,7 +85,7 @@ export default function HeroSlideshow() {
                           href="https://line.me/ti/p/~kbbattry" // <--- แก้ไขลิงก์ LINE ส่วนตัว
                           target="_blank"
                           rel="noopener noreferrer"
-                          className={styles.ctaButtonSecondaryStyle}
+                          className={styles.ctaLineStyle}
                       >
                           <FaLine style={{ marginRight: '8px' }} /> {/* <--- เปลี่ยนเป็น FaLine */}
                           แอดไลน์สอบถาม
