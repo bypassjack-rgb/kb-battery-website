@@ -130,7 +130,7 @@ export default function HomePage() {
                 >
               <Image 
                 src="/images/infographic_04.jpg" // Path ไปยัง Infographic เปลี่ยนแบต
-                alt="บริการเปลี่ยนแบตเตอรี่รถยนต์นอกสถานที่ KB Battery Car"
+                alt="บริการเปลี่ยนแบตเตอรี่รถยนต์นอกสถานที่ KBBatteryCar"
                 width={1200} 
                 height={500} 
                 className={styles.infographicImage}
@@ -143,7 +143,7 @@ export default function HomePage() {
                 >
                 <Image 
                   src="/images/infographic_03.jpg" 
-                  alt="ขั้นตอนบริการจั๊มแบตเตอรี่รถยนต์นอกสถานที่ KB Battery"
+                  alt="ขั้นตอนบริการจั๊มแบตเตอรี่รถยนต์นอกสถานที่ KBBatteryCar"
                   width={1200} 
                   height={500} 
                   className={styles.infographicImage}
@@ -188,7 +188,7 @@ export default function HomePage() {
       <section className={styles.featuresSection} id="features">
         <div className={styles.sectionContainer}>
           <h2 className={styles.featuresTitle}>
-            ทำไมลูกค้าถึงเลือก KB Battery Car
+            ทำไมลูกค้าถึงเลือก KBBatteryCar
           </h2>
           {/* ส่วนนี้ยังว่างเปล่า เราจะใส่เนื้อหาในขั้นตอนถัดไป */}
           <div className={styles.featuresContent}>
@@ -282,7 +282,7 @@ export default function HomePage() {
           {/* ********** END FABs ********** */}
       {/* Footer ยังคงอยู่ที่เดิม */}
       <footer className={styles.footer}>
-        <p>&copy; 2025 KB Battery. All rights reserved.</p>
+        <p>&copy; 2025 KBBatteryCar. All rights reserved.</p>
       </footer>
       {/* **** เพิ่ม Lightbox Component ไว้ที่นี่ **** */}
       <Lightbox 
