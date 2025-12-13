@@ -102,7 +102,7 @@ export default function HomePage() {
               <div className={styles.productPrice}>ติดต่อสอบถามเรา</div>
               <a href="http://line.me/ti/p/~kbbattry"
                   target="_blank"
-                  rel="noopener noreferrer" className={styles.productButton}>BATTRY</a>
+                  rel="noopener noreferrer" className={styles.productButton}>ติดต่อ kbbattry</a>
             </div>
             
           </div>
