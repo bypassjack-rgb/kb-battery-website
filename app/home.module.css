@@ -8,7 +8,7 @@
   --text-color: #212121; /* ดำ/เทาเข้ม (ตัวอักษร) */
   --border-color: #bbdefb; /* ฟ้าอ่อนสำหรับเส้นขอบ */
   --brand-accent: #ffc107; /* Amber/Yellow Accent (เพิ่มเข้ามา) */
-    scroll-behavior: smooth;
+  scroll-behavior: smooth;
 }
 
 /* Global Container Styles */
@@ -42,17 +42,16 @@
 }
 
 .logo {
-/* font-size: 1.875rem; /* text-3xl */
-/* font-weight: 800; /* font-extrabold */
-/* color: var(--primary-color);*/
-/* text-decoration: none;*/
-
+  /* font-size: 1.875rem; /* text-3xl */
+  /* font-weight: 800; /* font-extrabold */
+  /* color: var(--primary-color);*/
+  /* text-decoration: none;*/
 }
 
 .logoImage {
-    max-width: 100%;
-    height: auto;
-    /* เพิ่ม style ให้โลโก้แสดงผลดีบนมือถือ */
+  max-width: 100%;
+  height: auto;
+  /* เพิ่ม style ให้โลโก้แสดงผลดีบนมือถือ */
 }
 
 .navLinks a {
@@ -70,13 +69,15 @@
   display: none;
 }
 
-@media (min-width: 768px) { /* md:flex */
+@media (min-width: 768px) {
+  /* md:flex */
   .navLinks {
     display: flex;
   }
 }
 
-@media (max-width: 767px) { /* md:hidden */
+@media (max-width: 767px) {
+  /* md:hidden */
   .mobileMenuBtn {
     display: block;
     font-size: 1.5rem;
@@ -88,12 +89,12 @@
 
 /* Hero Section */
 .heroSection {
-    padding: 0; /* ลบ padding ออกจาก Section หลัก */
-    margin-top: 5rem; 
-    width: 100%;
-    position: relative;
-    overflow: hidden; 
-    min-height: 450px; 
+  padding: 0; /* ลบ padding ออกจาก Section หลัก */
+  margin-top: 5rem;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  min-height: 450px;
 }
 
 .heroTitle {
@@ -117,9 +118,29 @@
   justify-content: center;
   gap: 1rem; /* space-x-4 */
 }
+/* ปุ่มโทรศัพท์ (ใช้ Primary Style) แต่เปลี่ยนสีพื้นหลังเป็นสีแดง */
+.ctaButtonPrimary {
+  /* ใช้ Style พื้นฐานจากด้านบน แต่ override สี */
+  background-color: #cc0000 !important; /* สีแดงสำหรับโทรด่วน */
+  color: white !important; /* ตัวอักษรต้องเป็นสีขาว */
+}
 
+/* ปุ่ม LINE (ต้องเปลี่ยนชื่อ Class ใน HeroSlideshow.js) */
+.ctaLineStyle {
+  /* <--- ตั้งชื่อใหม่ให้ตรงกับปุ่ม LINE ใน JS */
+  background-color: #06c755; /* สีเขียว LINE */
+  color: white;
+  border: none; /* ไม่มีขอบ */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.ctaLineStyle:hover {
+  background-color: #00b34d; /* สีเขียวเข้มขึ้นเมื่อ hover */
+}
 /* Button Base Styles */
-.ctaButtonPrimary, .ctaButtonSecondary, .productButton {
+.ctaButtonPrimary,
+.ctaButtonSecondary,
+.productButton {
   padding: 0.75rem 2.5rem; /* py-3 px-10 */
   border-radius: 9999px; /* rounded-full */
   font-weight: 600; /* font-semibold */
@@ -152,7 +173,6 @@
   background-color: var(--primary-color);
   color: white;
 }
-
 
 /* Product Section Styles */
 .productsSection {
@@ -193,7 +213,8 @@
   background-color: var(--secondary-color);
   padding: 1.5rem; /* p-6 */
   border-radius: 0.75rem; /* rounded-xl */
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05);
   transition: transform 500ms, box-shadow 500ms;
 }
 
@@ -292,9 +313,9 @@
   padding: 2rem;
   border-radius: 0.75rem;
   text-align: center;
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px,
+    rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
   transition: transform 300ms, box-shadow 0.5s;
-
 }
 
 .serviceCard:hover {
@@ -327,22 +348,22 @@
   padding-bottom: 5rem;
   padding-left: 2rem;
   padding-right: 2rem;
-  background-color: var(--background-color); 
+  background-color: var(--background-color);
 }
 
 .featuresTitle {
-  font-size: 3rem; 
-  font-weight: 700; 
+  font-size: 3rem;
+  font-weight: 700;
   text-align: center;
   margin-bottom: 3rem;
   color: var(--primary-color);
 }
 
 .featuresContent {
-    max-width: 1280px;
-    margin-left: auto;
-    margin-right: auto;
-    /* ในอนาคตจะใช้ Grid ในการจัด Feature Cards */
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+  /* ในอนาคตจะใช้ Grid ในการจัด Feature Cards */
 }
 /* Infographic Styles */
 .infographicContainer {
@@ -357,18 +378,18 @@
 }
 
 .infographicTitle {
-    font-size: 2rem;
-    font-weight: 700;
-    color: var(--primary-color);
-    margin-bottom: 1.5rem;
-    padding-top: 1rem;
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  margin-bottom: 1.5rem;
+  padding-top: 1rem;
 }
 
 .infographicImage {
   /* ทำให้รูปภาพ Infographic ตอบสนองต่อขนาดจอ */
   width: 100%;
   height: auto;
-  max-width: 100%; 
+  max-width: 100%;
   object-fit: contain;
 }
 
@@ -406,7 +427,9 @@
   grid-template-columns: 1fr; /* Default: Single column for mobile */
   gap: 3rem;
   padding: 2rem;
-  background-color: var(--secondary-color); /* พื้นหลัง Contact เป็นสีขาว/ฟ้าอ่อน */
+  background-color: var(
+    --secondary-color
+  ); /* พื้นหลัง Contact เป็นสีขาว/ฟ้าอ่อน */
   border-radius: 1rem;
 }
 
@@ -455,7 +478,8 @@
   gap: 1rem;
 }
 
-.formInput, .formTextarea {
+.formInput,
+.formTextarea {
   padding: 0.75rem;
   border-radius: 0.5rem;
   border: 1px solid var(--border-color);
@@ -463,7 +487,8 @@
   color: var(--text-color);
 }
 
-.formInput::placeholder, .formTextarea::placeholder {
+.formInput::placeholder,
+.formTextarea::placeholder {
   color: #6b7280;
 }
 
@@ -492,11 +517,11 @@
 
 /* Style สำหรับทำให้รูปภาพ Infographic กดได้ และมี Cursor */
 .imageClickable {
-    cursor: pointer;
-    transition: opacity 0.2s;
+  cursor: pointer;
+  transition: opacity 0.2s;
 }
 .imageClickable:hover {
-    opacity: 0.9;
+  opacity: 0.9;
 }
 
 /* Lightbox Modal Styles */
@@ -552,7 +577,7 @@
 }
 
 .closeButton:hover {
-    background-color: #1565c0;
+  background-color: #1565c0;
 }
 
 /* ********** Hero Slideshow Styles (แก้ไขและเพิ่มส่วนที่ขาด) ********** */
@@ -568,248 +593,505 @@
 }
 
 /* 2. ภาพ Slide: เพิ่ม Style ที่ขาดหายไปสำหรับ Transition */
-.slide { 
+.slide {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  opacity: 0; 
-  transition: opacity 1.5s ease-in-out; 
-  z-index: 2; 
+  opacity: 0;
+  transition: opacity 1.5s ease-in-out;
+  z-index: 2;
 }
 
-.slide.active { 
-  opacity: 1; 
-  z-index: 3; 
+.slide.active {
+  opacity: 1;
+  z-index: 3;
 }
 
-.slideImage { 
+.slideImage {
   width: 100%; /* <-- เพิ่มเพื่อให้ภาพเต็มความกว้าง */
   height: 100%; /* <-- เพิ่มเพื่อให้ภาพเต็มความสูง */
   object-fit: cover; /* <-- ต้องมีเพื่อให้ภาพครอบคลุมพื้นที่ทั้งหมดโดยไม่เหลือขอบ */
 }
 
-
 /* ********** Slideshow Content Overlay (2-Column Layout) ********** */
 .heroOverlayContent {
-    position: relative; 
-    z-index: 5; 
-    
-    /* ใช้ Padding เพื่อกำหนดความสูงของ Section */
-    padding-top: 7rem; 
-    padding-bottom: 5rem; 
-    
-    /* Gradient พื้นหลังทึบด้านซ้าย */
-    background: linear-gradient(90deg, rgba(13, 71, 161, 0.7) 0%, rgba(13, 71, 161, 0.5) 30%, rgba(13, 71, 161, 0.1) 70%, rgba(13, 71, 161, 0.0) 100%);
+  position: relative;
+  z-index: 5;
+
+  /* ใช้ Padding เพื่อกำหนดความสูงของ Section */
+  padding-top: 7rem;
+  padding-bottom: 5rem;
+
+  /* Gradient พื้นหลังทึบด้านซ้าย */
+  background: linear-gradient(
+    90deg,
+    rgba(13, 71, 161, 0.7) 0%,
+    rgba(13, 71, 161, 0.5) 30%,
+    rgba(13, 71, 161, 0.1) 70%,
+    rgba(13, 71, 161, 0) 100%
+  );
 }
 
 /* 5. Content Container: จัด Layout 2 คอลัมน์บน Desktop */
 .heroContentContainer {
-    max-width: 1280px;
-    margin: 0 auto;
-    padding: 0 1rem;
-   /* Mobile: แสดงเป็น 1 คอลัมน์ */
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start; 
-    align-items: center;
-    text-align: center;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  /* Mobile: แสดงเป็น 1 คอลัมน์ */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  text-align: center;
 }
 
-@media (min-width: 1024px) { 
-    .heroContentContainer {
-        /* Desktop: แสดงเป็น 2 คอลัมน์ */
-        flex-direction: row; 
-        justify-content: space-between;
-        align-items: flex-start;
-    }
-    .heroTextSide {
-        width: 50%;
-        text-align: left;
-    }
-    .heroImageSide {
-        width: 50%;
-        /* ซ่อนพื้นที่ด้านขวาที่เคยเป็นรูปภาพบน Desktop เพื่อไม่ให้รบกวน Layout */
-        display: flex; 
-        justify-content: flex-end; 
-        align-items: flex-end;
-    }
+@media (min-width: 1024px) {
+  .heroContentContainer {
+    /* Desktop: แสดงเป็น 2 คอลัมน์ */
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+  .heroTextSide {
+    width: 50%;
+    text-align: left;
+  }
+  .heroImageSide {
+    width: 50%;
+    /* ซ่อนพื้นที่ด้านขวาที่เคยเป็นรูปภาพบน Desktop เพื่อไม่ให้รบกวน Layout */
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+  }
 }
 
 .heroImageSideText {
-    color: white;
-    font-size: 1.25rem;
-    font-weight: 600;
-    opacity: 0.8;
+  color: white;
+  font-size: 1.25rem;
+  font-weight: 600;
+  opacity: 0.8;
 }
 
 /* 6. Dot Navigation (จุดนำทาง) */
 .slideDots {
-    position: absolute;
-    bottom: 20px;
-    width: 100%;
-    text-align: center;
-    z-index: 5;
+  position: absolute;
+  bottom: 20px;
+  width: 100%;
+  text-align: center;
+  z-index: 5;
 }
 
 /* ********** Element Styles ********** */
 
 .heroBadge {
-    display: inline-block;
-    padding: 0.25rem 1rem;
-    margin-bottom: 1rem;
-    border-radius: 9999px; /* rounded-full */
-    background-color: rgba(13, 71, 161, 0.5); /* blue-800/50 */
-    border: 1px solid rgba(66, 165, 245, 0.3); /* border-blue-400/30 */
-    color: #90caf9; /* text-blue-200 */
-    font-size: 0.875rem;
-    font-weight: 500;
+  display: inline-block;
+  padding: 0.25rem 1rem;
+  margin-bottom: 1rem;
+  border-radius: 9999px; /* rounded-full */
+  background-color: rgba(13, 71, 161, 0.5); /* blue-800/50 */
+  border: 1px solid rgba(66, 165, 245, 0.3); /* border-blue-400/30 */
+  color: #90caf9; /* text-blue-200 */
+  font-size: 0.875rem;
+  font-weight: 500;
 }
 
 .heroTitleCustom {
-    font-size: 3rem; /* 4xl */
-    color: #e72222e7;
-    line-height: 1.2;
-    font-weight: 700;
-    margin-bottom: 1.5rem;
-    /*text-shadow: 0 0 10px rgb(226, 212, 212);*/
+  font-size: 3rem; /* 4xl */
+  color: #e72222e7;
+  line-height: 1.2;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  /*text-shadow: 0 0 10px rgb(226, 212, 212);*/
 }
 @media (min-width: 768px) {
-    .heroTitleCustom {
-        font-size: 4rem; /* md:6xl */
-    }
+  .heroTitleCustom {
+    font-size: 4rem; /* md:6xl */
+  }
 }
 
 .heroAccentText {
-    color: #ffc107; /* สีเหลืองทองคล้าย brand-accent */
+  color: #ffc107; /* สีเหลืองทองคล้าย brand-accent */
 }
 
 .heroSubtitleCustom {
-    font-size: 1.125rem; /* lg */
-    margin-bottom: 2rem;
-    color: #e3f2fd; /* blue-100 */
-    font-weight: 300;
+  font-size: 1.125rem; /* lg */
+  margin-bottom: 2rem;
+  color: #e3f2fd; /* blue-100 */
+  font-weight: 300;
 }
 
 .heroActions {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
 }
 @media (min-width: 640px) {
-    .heroActions {
-        flex-direction: row;
-        justify-content: center;
-    }
+  .heroActions {
+    flex-direction: row;
+    justify-content: center;
+  }
 }
 @media (min-width: 1024px) {
-    .heroActions {
-        justify-content: flex-start;
-    }
+  .heroActions {
+    justify-content: flex-start;
+  }
 }
 
 /* Primary CTA Button (โทรเรียกช่างด่วน) */
 .ctaAnimate {
-    background-color: #ffc107; /* brand-accent */
-    color: var(--text-color); /* brand-dark */
-    font-size: 1.25rem;
-    font-weight: 700;
-    padding: 1rem 2rem;
-    border-radius: 9999px; /* rounded-full */
-    box-shadow: 0 0 20px rgba(255, 193, 7, 0.5); 
-    transition: all 0.3s;
-    animation: pulse-fast 1.5s infinite; /* เพิ่ม Animation */
+  background-color: #ffc107; /* brand-accent */
+  color: var(--text-color); /* brand-dark */
+  font-size: 1.25rem;
+  font-weight: 700;
+  padding: 1rem 2rem;
+  border-radius: 9999px; /* rounded-full */
+  box-shadow: 0 0 20px rgba(255, 193, 7, 0.5);
+  transition: all 0.3s;
+  animation: pulse-fast 1.5s infinite; /* เพิ่ม Animation */
 }
 
 /* Secondary CTA Button (แอดไลน์สอบถาม) */
 .ctaButtonSecondaryStyle {
-    background-color: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(5px);
-    color: white;
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    font-size: 1.25rem;
-    font-weight: 500;
-    padding: 1rem 2rem;
-    border-radius: 9999px;
-    transition: all 0.3s;
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(5px);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  font-size: 1.25rem;
+  font-weight: 500;
+  padding: 1rem 2rem;
+  border-radius: 9999px;
+  transition: all 0.3s;
 }
 .ctaButtonSecondaryStyle:hover {
-    background-color: rgba(255, 255, 255, 0.2);
+  background-color: rgba(255, 255, 255, 0.2);
 }
 
 /* Keyframe for pulse-fast animation */
 @keyframes pulse-fast {
-    0%, 100% {
-        transform: scale(1);
-    }
-    50% {
-        transform: scale(1.05);
-        box-shadow: 0 0 25px rgba(255, 193, 7, 0.7);
-    }
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+    box-shadow: 0 0 25px rgba(255, 193, 7, 0.7);
+  }
 }
 /* ********** FLOATING ACTION BUTTONS (FAB) STYLES ********** */
 
 /* Container สำหรับปุ่มลอยทั้งหมด */
 .floatingButtonsContainer {
-    position: fixed; /* ทำให้ปุ่มลอยและติดตามไปทุกส่วน */
-    bottom: 20px; /* ระยะห่างจากด้านล่าง */
-    right: 20px; /* ระยะห่างจากด้านขวา */
-    display: flex;
-    flex-direction: column; /* จัดเรียงปุ่มจากบนลงล่าง */
-    gap: 15px; /* ระยะห่างระหว่างปุ่ม */
-    z-index: 999; /* Z-index สูงมาก เพื่อให้อยู่ด้านหน้าทุกอย่าง */
+  position: fixed; /* ทำให้ปุ่มลอยและติดตามไปทุกส่วน */
+  bottom: 20px; /* ระยะห่างจากด้านล่าง */
+  right: 20px; /* ระยะห่างจากด้านขวา */
+  display: flex;
+  flex-direction: column; /* จัดเรียงปุ่มจากบนลงล่าง */
+  gap: 15px; /* ระยะห่างระหว่างปุ่ม */
+  z-index: 999; /* Z-index สูงมาก เพื่อให้อยู่ด้านหน้าทุกอย่าง */
 }
 
 /* Base Style สำหรับปุ่มลอย */
 .fabButton {
-    width: 60px;
-    height: 60px;
-    border-radius: 50%; /* ทำให้เป็นวงกลม */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
-    text-decoration: none;
-    transition: transform 0.3s, box-shadow 0.3s;
-    color: white; /* สีไอคอน */
+  width: 60px;
+  height: 60px;
+  border-radius: 50%; /* ทำให้เป็นวงกลม */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+  text-decoration: none;
+  transition: transform 0.3s, box-shadow 0.3s;
+  color: white; /* สีไอคอน */
 }
 
 .fabButton:hover {
-    transform: scale(1.1); /* ขยายเล็กน้อยเมื่อชี้ */
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.35);
+  transform: scale(1.1); /* ขยายเล็กน้อยเมื่อชี้ */
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.35);
 }
 
 /* Style เฉพาะปุ่ม LINE */
 .fabLine {
-    background-color: #00C300; /* สีเขียว Line */
+  background-color: #00c300; /* สีเขียว Line */
 }
 
 /* Style เฉพาะปุ่ม CALL (ปุ่มโทร) */
 .fabCall {
-    background-color: #ffc107 /* ใช้สีน้ำเงินเข้มหลัก */
+  background-color: #ffc107; /* ใช้สีน้ำเงินเข้มหลัก */
 }
 
 /* ********** ANIMATION สำหรับปุ่ม CALL ********** */
 
 .fabCallAnimate {
-    animation: pulse-fab 2s infinite; /* เรียกใช้ animation pulse-fab */
+  animation: pulse-fab 2s infinite; /* เรียกใช้ animation pulse-fab */
 }
 
 /* Keyframe for FAB pulse animation */
 @keyframes pulse-fab {
-    0% {
-        transform: scale(1);
-        box-shadow: 0 0 0 0 #ffc107; /* เริ่มต้นที่ไม่มีเงา */
-    }
-    70% {
-        transform: scale(1.1);
-        box-shadow: 0 0 0 15px rgba(13, 71, 161, 0); /* ขยายวงเงาออกไป */
-    }
-    100% {
-        transform: scale(1);
-        box-shadow: 0 0 0 0 rgba(13, 71, 161, 0);
-    }
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 #ffc107; /* เริ่มต้นที่ไม่มีเงา */
+  }
+  70% {
+    transform: scale(1.1);
+    box-shadow: 0 0 0 15px rgba(13, 71, 161, 0); /* ขยายวงเงาออกไป */
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(13, 71, 161, 0);
+  }
+}
+
+/* A. Keyframes สำหรับ Animation */
+@keyframes cta-pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* B. Class สำหรับ Animation */
+.ctaAnimate {
+  animation: cta-pulse 1s ease-in-out infinite; /* ขยับเบาๆ 1 วินาที ทำซ้ำ */
+}
+/* 1. จัดเรียงปุ่มให้เข้าคู่กัน */
+.heroCtaButtons {
+  display: flex; /* ทำให้ปุ่มอยู่บรรทัดเดียวกัน */
+  flex-wrap: wrap; /* ให้ขึ้นบรรทัดใหม่ถ้าจอแคบ */
+  gap: 15px; /* ระยะห่างระหว่างปุ่ม */
+  margin-top: 30px; /* ระยะห่างจากข้อความด้านบน */
+}
+
+/* 2. จัดรูปแบบพื้นฐานของปุ่ม */
+.heroCtaButton {
+  display: inline-flex;
+  align-items: center;
+  padding: 12px 25px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: background-color 0.3s, transform 0.3s;
+  color: white; /* ข้อความสีขาว */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* 3. กำหนดสีเฉพาะ */
+.ctaLine {
+  background-color: #06c755; /* สีเขียว LINE */
+}
+
+.ctaCall {
+  background-color: #cc0000; /* สีแดงโดดเด่นสำหรับโทร */
+}
+/* ********** สไตล์เฉพาะสำหรับปุ่ม LINE และ CALL ใน HERO SECTION ********** */
+
+/* 1. Animation Class (หากยังไม่เพิ่ม) */
+@keyframes cta-pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.ctaAnimate {
+  animation: cta-pulse 1s ease-in-out infinite; /* ปุ่มโทรศัพท์จะขยับ */
+}
+
+/* 2. OVERRIDE สี/Style ของปุ่ม CALL (ctaButtonPrimary) */
+/* ใช้ Class เดิม แต่กำหนดสีใหม่ให้โดดเด่น */
+.ctaButtonPrimary {
+  background-color: #cc0000 !important; /* สีแดงสำหรับโทรด่วน */
+  color: white !important; /* ตัวอักษรสีขาว */
+  border: none !important; /* ลบขอบเดิมออก */
+  /* ถ้าต้องการให้ใหญ่ขึ้น: */
+  padding: 15px 30px !important;
+  font-size: 1.2rem !important; /* ขนาดตัวอักษรใหญ่ขึ้น */
+}
+/* สไตล์ไอคอนภายในปุ่ม CALL */
+.ctaButtonPrimary svg {
+  font-size: 1.4rem; /* กำหนดขนาดไอคอนโทรศัพท์ */
+}
+
+/* 3. ปุ่ม LINE (ctaLineStyle) */
+/* กำหนด Style ให้ Class ที่สร้างขึ้นใหม่ */
+.ctaLineStyle {
+  display: inline-flex;
+  align-items: center;
+  padding: 15px 30px; /* ขนาดเท่าปุ่ม Call */
+  font-size: 1.2rem; /* ขนาดตัวอักษรเท่าปุ่ม Call */
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 9999px; /* rounded-full */
+
+  background-color: #06c755; /* สีเขียว LINE */
+  color: white;
+  border: none;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s;
+}
+
+.ctaLineStyle:hover {
+  background-color: #00b34d; /* สีเขียวเข้มขึ้นเมื่อ hover */
+}
+/* สไตล์ไอคอนภายในปุ่ม LINE */
+/* เลือกเฉพาะ SVG (ไอคอน) ที่อยู่ภายในปุ่มที่มี class ctaButtonPrimary และ ctaLineStyle */
+.ctaButtonPrimary svg,
+.ctaLineStyle svg {
+  /* บังคับให้ไอคอนอยู่ตรงกลางแนวตั้ง */
+  vertical-align: middle !important;
+
+  /* กำหนดขนาดไอคอน */
+  font-size: 1.4rem !important;
+
+  /* กำหนดระยะห่างด้านขวา (จากโค้ดเดิม) */
+  margin-right: 8px !important;
+
+  /* เพื่อความชัวร์ (บางครั้งจำเป็น) */
+  display: inline-block !important;
+}
+
+/* --- Product Overview Section Styles --- */
+
+.sectionPadding {
+  padding: 60px 20px;
+  background-color: var(--secondary-color); /* ใช้สีรองเพื่อแยกส่วน */
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.sectionTitle {
+  text-align: center;
+  font-size: 2.5rem;
+  color: var(--text-color);
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+
+.sectionSubtitle {
+  text-align: center;
+  font-size: 1.1rem;
+  color: #666;
+  margin-bottom: 40px;
+}
+
+/* 1. Grid Layout */
+.productGrid {
+  display: grid;
+  /* แสดง 3 คอลัมน์ บนหน้าจอใหญ่ */
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+}
+
+/* 2. Product Card */
+.productCard {
+  background-color: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+}
+
+.productCard:hover {
+  transform: translateY(-5px); /* ยกขึ้นเล็กน้อยเมื่อชี้ */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.productImageWrapper {
+  width: 100%;
+  height: 200px; /* กำหนดความสูงของพื้นที่รูปภาพ */
+  position: relative;
+}
+
+.productImage {
+  object-fit: cover; /* ทำให้รูปภาพครอบคลุมพื้นที่โดยไม่ยืด */
+}
+
+.productContent {
+  padding: 20px;
+}
+
+.productName {
+  font-size: 1.5rem;
+  color: var(--primary-color);
+  margin-bottom: 10px;
+}
+
+.productDescription {
+  color: #555;
+  margin-bottom: 15px;
+}
+
+/* 3. Feature List */
+.featureList {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 20px;
+}
+
+.featureList li {
+  font-size: 0.95rem;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+/* 4. Footer & Button */
+.productFooter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 15px;
+  padding-top: 15px;
+  border-top: 1px dashed var(--border-color);
+}
+
+.productPrice {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #cc0000; /* ใช้สีแดงเน้นราคา */
+}
+
+.productCtaButton {
+  background-color: var(--brand-accent); /* สีเหลือง/ทอง */
+  color: var(--text-color);
+  padding: 10px 20px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background-color 0.3s;
+}
+
+.productCtaButton:hover {
+  background-color: #fcd34d; /* เหลืองอ่อนลง */
+}
+/* จัดการไอคอนในส่วน Contact Info */
+.contactIcon {
+  font-size: 45px; /* ปรับขนาดไอคอน */
+  color: #06c755; /* สีเขียวมาตรฐานของ LINE */
+  margin-bottom: 10px; /* เพิ่มระยะห่างระหว่างไอคอนกับข้อความ Line ID */
+  display: block; /* เพื่อให้ไอคอนอยู่ด้านบนข้อความตามรูป */
+}
+
+/* ปรับไอคอนอีเมลให้เท่ากันด้วย */
+.emailIcon {
+  font-size: 40px;
+  color: #555;
+  margin-bottom: 10px;
+  display: block;
 }

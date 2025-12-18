@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
+import { FaLine, FaPhoneAlt } from 'react-icons/fa'; // <--- Icon ถูก Import แล้ว
 import styles from '../app/home.module.css';
 
 // รายการรูปภาพสำหรับ Slideshow
@@ -67,14 +68,26 @@ export default function HeroSlideshow() {
                       บริการเปลี่ยนแบตเตอรี่รถยนต์นอกสถานที่ ครอบคลุมทั่วพื้นที่ ราคาถูกกว่าศูนย์ แบตเตอรี่ใหม่แกะกล่องทุกลูก พร้อมรับประกัน
                   </p>
                   
-                  {/* Call to Action Buttons */}
+                  {/* Call to Action Buttons: แก้ไข Link และ Icon Component */}
                   <div className={styles.heroActions}>
-                      <a href="#contact" className={`${styles.ctaButtonPrimary} ${styles.ctaAnimate}`}>
-                          <i className="fas fa-phone-volume"></i>
-                          โทรเรียกช่างด่วน
+                      
+                      {/* 1. ปุ่ม CALL: "โทรเรียกช่างด่วน" (พร้อม Animation) */}
+                      <a 
+                          href="tel:0623736168" // <--- แก้ไขลิงก์โทรศัพท์
+                          className={`${styles.ctaButtonPrimary} ${styles.ctaAnimate}`}
+                      >
+                          <FaPhoneAlt style={{ marginRight: '8px' }} /> {/* <--- เปลี่ยนเป็น FaPhoneAlt */}
+                       0623736168
                       </a>
-                      <a href="#contact" className={styles.ctaButtonSecondaryStyle}>
-                          <i className="fab fa-line text-green-400"></i>
+                      
+                      {/* 2. ปุ่ม LINE: "แอดไลน์สอบถาม" */}
+                      <a 
+                          href="https://line.me/ti/p/~kbbattry" // <--- แก้ไขลิงก์ LINE ส่วนตัว
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className={`${styles.ctaLineStyle} ${styles.ctaAnimate}`}
+                      >
+                          <FaLine style={{ marginRight: '8px' }} /> {/* <--- เปลี่ยนเป็น FaLine */}
                           แอดไลน์สอบถาม
                       </a>
                   </div>
