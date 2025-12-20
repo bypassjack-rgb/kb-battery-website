@@ -87,8 +87,8 @@ export default function HomePageClient({ workImages }: HomePageClientProps) {
                 <Image
                   src="/images/battery-standard/battery-GS.png"
                   alt="แบตเตอรี่"
-                  width={150}
-                  height={100}
+                  width={200}
+                  height={150}
                   className={styles.productImage}
                 />
               </div>
@@ -112,10 +112,11 @@ export default function HomePageClient({ workImages }: HomePageClientProps) {
             <div className={styles.productCard}>
               <div className={styles.productImagePlaceholder}>
                 <Image
-                  src="/images/battery-agm/BOSCH-105D31L-MF.jpg" // <--- ชี้ไปที่ไฟล์ PNG
+                  src="/images/battery-agm/BOSCH-105D31L-MF.png" // <--- ชี้ไปที่ไฟล์ PNG
                   alt="แบตเตอรี่ AGM (รถยนต์ Start-Stop)"
-                  width={150} // กำหนดความกว้าง
-                  height={100} // กำหนดความสูง
+                  width={200} // กำหนดความกว้าง
+                  height={150} // กำหนดความสูง
+                  style={{ objectFit: "cover" }}
                   className={styles.productImage} // ใช้ Class จัด Style (ใน home.module.css)
                 />
               </div>
@@ -141,10 +142,10 @@ export default function HomePageClient({ workImages }: HomePageClientProps) {
             <div className={styles.productCard}>
               <div className={styles.productImagePlaceholder}>
                 <Image
-                  src="/images/battery-truck/BT-YUASA-01.jpg" // <--- ชี้ไปที่ไฟล์ PNG
+                  src="/images/battery-truck/BT-YUASA-01.png" // <--- ชี้ไปที่ไฟล์ PNG
                   alt="แบตเตอรี่รถบรรทุก / รถเพื่อการพาณิชย์"
-                  width={150} // กำหนดความกว้าง
-                  height={100} // กำหนดความสูง
+                  width={200} // กำหนดความกว้าง
+                  height={150} // กำหนดความสูง
                   className={styles.productImage} // ใช้ Class จัด Style (ใน home.module.css)
                 />
               </div>
