@@ -19,6 +19,9 @@ export const metadata: Metadata = {
     "KB Battery Car | แบตเตอรี่รถยนต์ บริการเปลี่ยนถึงที่ พร้อมราคาที่ดีที่สุด",
   description:
     "KB Battery Car จำหน่ายแบตเตอรี่รถยนต์คุณภาพสูงทุกยี่ห้อ พร้อมบริการเปลี่ยนแบตเตอรี่รถยนต์รวดเร็วถึงที่ (ฟรีค่าติดตั้ง) เช็คราคาแบตเตอรี่รถยนต์รุ่นต่างๆ ได้ที่นี่.",
+  verification: {
+    google: "PgACb-HTh2jcKT2FAsmsHFTm_tCU4_QWkA6ID4PoG50",
+  },
   icons: {
     icon: [
       { url: "/favicon.ico" }, // Default
