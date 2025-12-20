@@ -20,9 +20,21 @@ export const metadata: Metadata = {
   description:
     "KB Battery Car จำหน่ายแบตเตอรี่รถยนต์คุณภาพสูงทุกยี่ห้อ พร้อมบริการเปลี่ยนแบตเตอรี่รถยนต์รวดเร็วถึงที่ (ฟรีค่าติดตั้ง) เช็คราคาแบตเตอรี่รถยนต์รุ่นต่างๆ ได้ที่นี่.",
   icons: {
-    icon: "/favicon.ico",
-    shortcut: "/favicon-32x32.png",
-    apple: "/apple-touch-icon.png",
+    icon: [
+      { url: "/favicon.ico" }, // Default
+      { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
+      { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+    ],
+    shortcut: "/icon.png",
+    apple: [
+      { url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" },
+    ],
+    other: [
+      {
+        rel: "apple-touch-icon-precomposed",
+        url: "/apple-touch-icon-precomposed.png",
+      },
+    ],
   },
 };
 
