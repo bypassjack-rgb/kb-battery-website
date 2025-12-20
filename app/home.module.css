@@ -424,6 +424,7 @@
   max-width: 1280px;
   margin: 0 auto;
   display: grid;
+  justify-content: center;
   grid-template-columns: 1fr; /* Default: Single column for mobile */
   gap: 3rem;
   padding: 2rem;
@@ -447,6 +448,7 @@
 .infoText {
   color: #9ca3af;
   margin-bottom: 2rem;
+  text-align: center;
 }
 
 .contactDetail {
@@ -749,7 +751,7 @@
   font-weight: 700;
   padding: 1rem 2rem;
   border-radius: 9999px; /* rounded-full */
-  box-shadow: 0 0 20px rgba(255, 193, 7, 0.5);
+  /* box-shadow: 0 0 20px rgba(255, 193, 7, 0.5);*/
   transition: all 0.3s;
   animation: pulse-fast 1.5s infinite; /* เพิ่ม Animation */
 }
@@ -1094,4 +1096,304 @@
   color: #555;
   margin-bottom: 10px;
   display: block;
+}
+/* ส่วน Gallery */
+.worksSection {
+  padding: 50px 20px;
+  background-color: #f8f9fa;
+  text-align: center;
+}
+
+.worksGrid {
+  display: grid;
+  /* เทคนิค Auto Grid: จะพยายามจัดให้ได้ 4 คอลัมน์ ถ้าจอเล็กจะลดลงเอง */
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 15px;
+  max-width: 1200px;
+  margin: 30px auto 0;
+}
+
+.workItem {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 3; /* กำหนดสัดส่วนรูปภาพให้เท่ากันหมด (4:3) */
+  overflow: hidden;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.workImage {
+  object-fit: cover; /* บังคับให้รูปเต็มกรอบโดยไม่เสียสัดส่วน */
+  transition: transform 0.3s ease;
+}
+
+.workItem:hover .workImage {
+  transform: scale(1.1); /* ซูมเมื่อเอาเมาส์ชี้ */
+}
+
+/* Overlay ตอนเอาเมาส์ชี้ */
+.workOverlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.workItem:hover .workOverlay {
+  opacity: 1;
+}
+
+/* Lightbox (Popup) */
+.lightboxOverlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.9);
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.closeButton {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 40px;
+  color: white;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 2001;
+}
+
+.lightboxImage {
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+}
+.headerGroup {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.topSubtitle {
+  display: block;
+  color: #ff4d4d; /* สีแดงแบรนด์ */
+  font-weight: bold;
+  letter-spacing: 2px;
+  font-size: 0.9rem;
+  margin-bottom: 10px;
+}
+
+.mainTitle {
+  font-size: 2.5rem;
+  color: #1a2a6c; /* สีกรมท่าดูมั่นคง */
+  font-weight: 800;
+}
+
+.highlightText {
+  color: #fdbb2d; /* สีเหลืองทองให้ความรู้สึกพรีเมียม */
+  text-shadow: 1px 1px 0px #000;
+}
+
+.titleUnderline {
+  width: 80px;
+  height: 5px;
+  background: #ff4d4d;
+  margin: 15px auto;
+  border-radius: 5px;
+}
+
+.galleryHeaderGroup {
+  margin-top: 80px;
+  text-align: left; /* ปรับเป็นชิดซ้ายให้ดูมีจังหวะต่างจากหัวข้อบน */
+  border-left: 8px solid #fdbb2d;
+  padding-left: 20px;
+  margin-bottom: 30px;
+}
+
+.galleryTitle {
+  font-size: 1.8rem;
+  margin: 0;
+  color: #333;
+}
+
+.gallerySubtitle {
+  color: #666;
+  margin-top: 5px;
+}
+/* จัด Grid เป็น 4 คอลัมน์ */
+.worksGridCustom {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 คอลัมน์เท่าๆ กัน */
+  gap: 10px; /* ระยะห่างระหว่างรูป */
+  margin-top: 20px;
+}
+
+/* ควบคุมสัดส่วนรูปภาพ */
+.workItemCustom {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1; /* ทำเป็นรูปสี่เหลี่ยมจัตุรัสเพื่อให้ลงตัวกับ 3 แถว */
+  overflow: hidden;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.5s ease-in-out; /* เพิ่มความสมูทตอนเปลี่ยนรูป */
+}
+
+.workItemCustom:hover {
+  transform: scale(1.05);
+  z-index: 10;
+}
+
+/* ปรับปรุงให้รองรับมือถือ (เหลือ 3 คอลัมน์เพื่อให้รูปไม่เล็กเกินไป) */
+@media (max-width: 768px) {
+  .worksGridCustom {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+/* จัดตาราง 4 คอลัมน์ */
+.worksGridCustom {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+  transition: opacity 0.8s ease-in-out; /* ความเร็วในการเปลี่ยนภาพให้ดูนุ่มนวล */
+}
+
+/* เอฟเฟกต์ Fade */
+.fadeIn {
+  opacity: 1;
+}
+
+.fadeOut {
+  opacity: 0;
+}
+
+/* เอฟเฟกต์ตอนเอาเมาส์วางบนรูป */
+.workItemCustom {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  border-radius: 12px;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.workItemCustom:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 10px 15px rgba(2, 2, 2, 0.5);
+  z-index: 2;
+}
+
+/* การแสดงผลบนมือถือให้ดูดี */
+@media (max-width: 768px) {
+  .worksGridCustom {
+    grid-template-columns: repeat(
+      2,
+      1fr
+    ); /* มือถือเหลือ 2 คอลัมน์เพื่อให้ภาพไม่เล็กไป */
+  }
+}
+.productHeaderGroup {
+  text-align: center;
+  margin-bottom: 60px;
+  position: relative;
+}
+
+.badgeText {
+  display: inline-block;
+  background: #ff4d4d; /* สีแดงสปอร์ต */
+  color: white;
+  padding: 4px 15px;
+  border-radius: 50px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  margin-bottom: 15px;
+  box-shadow: 0 4px 10px rgba(255, 77, 77, 0.3);
+}
+
+.modernTitle {
+  font-size: 2.8rem;
+  color: #1a2a6c; /* สีกรมท่าเข้ม */
+  font-weight: 800;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.iconSpan {
+  margin-right: 15px;
+  filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.1));
+}
+
+.emphasize {
+  color: #fdbb2d; /* สีเหลืองทอง */
+  position: relative;
+  display: inline-block;
+}
+
+/* เพิ่มลูกเล่นขีดเส้นใต้แบบเฉียงๆ ใต้คำว่า แบตเตอรี่คุณภาพ */
+.emphasize::after {
+  content: "";
+  position: absolute;
+  bottom: 5px;
+  left: 0;
+  width: 100%;
+  height: 12px;
+  background: rgba(253, 187, 45, 0.2);
+  z-index: -1;
+  transform: skewX(-15deg);
+}
+
+.titleDescription {
+  color: #666;
+  font-size: 1.1rem;
+  margin-top: 15px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* เส้นตกแต่ง divider */
+.titleDivider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 25px;
+}
+
+.dividerLine {
+  width: 50px;
+  height: 2px;
+  background: linear-gradient(to right, transparent, #1a2a6c);
+}
+
+.dividerLine:last-child {
+  background: linear-gradient(to left, transparent, #1a2a6c);
+}
+
+.dividerDot {
+  width: 8px;
+  height: 8px;
+  background: #ff4d4d;
+  border-radius: 50%;
+}
+
+/* ปรับแต่งสำหรับมือถือ */
+@media (max-width: 768px) {
+  .modernTitle {
+    font-size: 2rem;
+  }
+  .titleDescription {
+    font-size: 0.95rem;
+    padding: 0 20px;
+  }
 }
