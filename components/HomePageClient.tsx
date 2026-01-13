@@ -112,10 +112,10 @@ export default function HomePageClient({ workImages }: HomePageClientProps) {
               </p>
               <div className={styles.productPrice}>เริ่มต้น ฿1,800</div>
               <a
-                href="http://line.me/ti/p/~kbbattry"
+                href="https://line.me/ti/p/~kbbattry"
                 target="_blank"
                 rel="noopener noreferrer"
-                onClick={(e) => handleConversion(e, "https://line.me/ti/p/@kbbattery")}
+                onClick={(e) => handleConversion(e, "https://line.me/ti/p/~kbbattry")}
                 className={styles.productButton}
               >
                 สอบถามรายละเอียด
@@ -142,10 +142,10 @@ export default function HomePageClient({ workImages }: HomePageClientProps) {
               </p>
               <div className={styles.productPrice}>ติดต่อสอบถามเรา</div>
               <a
-                href="http://line.me/ti/p/~kbbattry"
+                href="https://line.me/ti/p/~kbbattry"
                 target="_blank"
                 rel="noopener noreferrer"
-                onClick={(e) => handleConversion(e, "https://line.me/ti/p/@kbbattery")}
+                onClick={(e) => handleConversion(e, "https://line.me/ti/p/~kbbattery")}
                 className={styles.productButton}
               >
                 ติดต่อ kbbattry
@@ -172,10 +172,10 @@ export default function HomePageClient({ workImages }: HomePageClientProps) {
               </p>
               <div className={styles.productPrice}>ติดต่อสอบถามเรา</div>
               <a
-                href="http://line.me/ti/p/~kbbattry"
+                href="https://line.me/ti/p/~kbbattry"
                 target="_blank"
                 rel="noopener noreferrer"
-                onClick={(e) => handleConversion(e, "https://line.me/ti/p/@kbbattery")}
+                onClick={(e) => handleConversion(e, "https://line.me/ti/p/~kbbattery")}
                 className={styles.productButton}
               >
                 ติดต่อ kbbattry
@@ -358,10 +358,10 @@ export default function HomePageClient({ workImages }: HomePageClientProps) {
                   <strong style={{ paddingRight: 5 }}>Line ID:</strong>
                   {/* ใช้ LINE ID ธรรมดา: kbbattry */}
                   <a
-                    href="http://line.me/ti/p/~kbbattry"
+                    href="https://line.me/ti/p/~kbbattry"
                     target="_blank"
                     rel="noopener noreferrer"
-                    onClick={(e) => handleConversion(e, "https://line.me/ti/p/@kbbattery")}
+                    onClick={(e) => handleConversion(e, "https://line.me/ti/p/~kbbattery")}
                     className={styles.contactLink}
                   >
                     kbbattry
@@ -425,7 +425,7 @@ export default function HomePageClient({ workImages }: HomePageClientProps) {
           href="https://line.me/ti/p/~kbbattry"
           target="_blank"
           rel="noopener noreferrer"
-          onClick={(e) => handleConversion(e, "https://line.me/ti/p/@kbbattery")}
+          onClick={(e) => handleConversion(e, "https://line.me/ti/p/~kbbattery")}
           className={`${styles.fabButton} ${styles.fabLine}`}
           title="แอดไลน์สอบถาม: kbbattry"
         >
