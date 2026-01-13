@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import React from "react";
+import Script from "next/script";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -49,6 +50,19 @@ export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang="th">
       {/* เพิ่ม className เพื่อให้ฟอนต์ Geist ทำงาน */}
+      {/* 2. ติดตั้ง Google Tag (gtag.js) */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=AW-17801510798"
+          strategy="afterInteractive"
+        />
+        <Script id="google-ads-tag" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'AW-17801510798');
+          `}
+        </Script>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
