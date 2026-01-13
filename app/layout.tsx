@@ -61,6 +61,21 @@ export default function RootLayout({ children }: RootLayoutProps) {
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
             gtag('config', 'AW-17801510798');
+          // เพิ่ม Event snippet สำหรับติดตาม Conversion การคลิก
+            function gtag_report_conversion(url) {
+              var callback = function () {
+                if (typeof(url) != 'undefined') {
+                  window.location = url;
+                }
+              };
+              gtag('event', 'conversion', {
+                  'send_to': 'AW-17801510798/2OR7CLDdh-IbEI7_tahC',
+                  'event_callback': callback
+              });
+              return false;
+            }
+            // ทำให้ฟังก์ชันเรียกใช้ได้จากระดับ window
+            window.gtag_report_conversion = gtag_report_conversion;
           `}
         </Script>
       <body
