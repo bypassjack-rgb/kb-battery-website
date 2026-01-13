@@ -30,6 +30,18 @@ export default function HomePageClient({ workImages }: HomePageClientProps) {
     setCurrentImageSrc("");
     setCurrentImageAlt("");
   };
+  // สร้างฟังก์ชันสำหรับจัดการ Conversion
+  const handleConversion = (e: React.MouseEvent<HTMLAnchorElement>, url: string) => {
+    e.preventDefault();
+    
+    // ตรวจสอบว่ามีฟังก์ชัน gtag_report_conversion ที่เราใส่ไว้ใน layout หรือไม่
+    if (typeof window !== "undefined" && (window as any).gtag_report_conversion) {
+      (window as any).gtag_report_conversion(url);
+    } else {
+      // ถ้าไม่มี หรือโหลดไม่ทัน ให้ส่งไปที่ URL ปลายทางตามปกติ
+      window.location.href = url;
+    }
+  };
 
   return (
     <main className={styles.mainContainer}>
@@ -103,6 +115,7 @@ export default function HomePageClient({ workImages }: HomePageClientProps) {
                 href="http://line.me/ti/p/~kbbattry"
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={(e) => handleConversion(e, "https://line.me/ti/p/@kbbattery")}
                 className={styles.productButton}
               >
                 สอบถามรายละเอียด
@@ -132,6 +145,7 @@ export default function HomePageClient({ workImages }: HomePageClientProps) {
                 href="http://line.me/ti/p/~kbbattry"
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={(e) => handleConversion(e, "https://line.me/ti/p/@kbbattery")}
                 className={styles.productButton}
               >
                 ติดต่อ kbbattry
@@ -161,6 +175,7 @@ export default function HomePageClient({ workImages }: HomePageClientProps) {
                 href="http://line.me/ti/p/~kbbattry"
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={(e) => handleConversion(e, "https://line.me/ti/p/@kbbattery")}
                 className={styles.productButton}
               >
                 ติดต่อ kbbattry
@@ -323,7 +338,9 @@ export default function HomePageClient({ workImages }: HomePageClientProps) {
                     }}
                   />
                   <strong style={{ paddingRight: 5 }}>โทรศัพท์:</strong>
-                  <a href="tel:0623736168" className={styles.contactLink}>
+                  <a href="tel:0623736168"
+                    onClick={(e) => handleConversion(e, "tel:0623736168")}
+                    className={styles.contactLink}>
                     062-373-6168
                   </a>
                 </p>
@@ -344,6 +361,7 @@ export default function HomePageClient({ workImages }: HomePageClientProps) {
                     href="http://line.me/ti/p/~kbbattry"
                     target="_blank"
                     rel="noopener noreferrer"
+                    onClick={(e) => handleConversion(e, "https://line.me/ti/p/@kbbattery")}
                     className={styles.contactLink}
                   >
                     kbbattry
@@ -407,6 +425,7 @@ export default function HomePageClient({ workImages }: HomePageClientProps) {
           href="https://line.me/ti/p/~kbbattry"
           target="_blank"
           rel="noopener noreferrer"
+          onClick={(e) => handleConversion(e, "https://line.me/ti/p/@kbbattery")}
           className={`${styles.fabButton} ${styles.fabLine}`}
           title="แอดไลน์สอบถาม: kbbattry"
         >
@@ -416,6 +435,7 @@ export default function HomePageClient({ workImages }: HomePageClientProps) {
         {/* 2. ปุ่ม CALL (ด้านล่าง, มี Animation) */}
         <a
           href="tel:0623736168"
+          onClick={(e) => handleConversion(e, "tel:0623736168")}
           className={`${styles.fabButton} ${styles.fabCall} ${styles.fabCallAnimate}`}
           title="โทรด่วน: 062-373-6168"
         >
