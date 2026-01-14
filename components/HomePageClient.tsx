@@ -145,7 +145,7 @@ export default function HomePageClient({ workImages }: HomePageClientProps) {
                 href="https://line.me/ti/p/~kbbattry"
                 target="_blank"
                 rel="noopener noreferrer"
-                onClick={(e) => handleConversion(e, "https://line.me/ti/p/~kbbattery")}
+                onClick={(e) => handleConversion(e, "https://line.me/ti/p/~kbbattry")}
                 className={styles.productButton}
               >
                 ติดต่อ kbbattry
@@ -175,7 +175,7 @@ export default function HomePageClient({ workImages }: HomePageClientProps) {
                 href="https://line.me/ti/p/~kbbattry"
                 target="_blank"
                 rel="noopener noreferrer"
-                onClick={(e) => handleConversion(e, "https://line.me/ti/p/~kbbattery")}
+                onClick={(e) => handleConversion(e, "https://line.me/ti/p/~kbbattry")}
                 className={styles.productButton}
               >
                 ติดต่อ kbbattry
@@ -361,7 +361,7 @@ export default function HomePageClient({ workImages }: HomePageClientProps) {
                     href="https://line.me/ti/p/~kbbattry"
                     target="_blank"
                     rel="noopener noreferrer"
-                    onClick={(e) => handleConversion(e, "https://line.me/ti/p/~kbbattery")}
+                    onClick={(e) => handleConversion(e, "https://line.me/ti/p/~kbbattry")}
                     className={styles.contactLink}
                   >
                     kbbattry
@@ -425,7 +425,7 @@ export default function HomePageClient({ workImages }: HomePageClientProps) {
           href="https://line.me/ti/p/~kbbattry"
           target="_blank"
           rel="noopener noreferrer"
-          onClick={(e) => handleConversion(e, "https://line.me/ti/p/~kbbattery")}
+          onClick={(e) => handleConversion(e, "https://line.me/ti/p/~kbbattry")}
           className={`${styles.fabButton} ${styles.fabLine}`}
           title="แอดไลน์สอบถาม: kbbattry"
         >
