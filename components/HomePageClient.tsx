@@ -224,12 +224,13 @@ export default function HomePageClient({ workImages }: HomePageClientProps) {
                 className={styles.infographicImage}
               />
             </div>
-            <h2
+            { /* <h2
               className={styles.infographicTitle}
               style={{ marginTop: "2rem" }}
             >
               บริการจั๊มแบตฉุกเฉิน
             </h2>
+            
             <div
               className={styles.imageClickable}
               onClick={() =>
@@ -247,6 +248,7 @@ export default function HomePageClient({ workImages }: HomePageClientProps) {
                 className={styles.infographicImage}
               />
             </div>
+            */ }
           </div>
           {/* Grid Layout สำหรับบริการ 3 อย่าง */}
           <div className={styles.serviceGrid}>
