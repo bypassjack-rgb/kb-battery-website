@@ -111,14 +111,10 @@ export default function HomePageClient({ workImages }: HomePageClientProps) {
                 อายุการใช้งานยาวนาน ด้วยเทคโนโลยีแผ่นธาตุที่ทนทานต่อทุกสภาพอากาศ
               </p>
               <div className={styles.productPrice}>เริ่มต้น ฿1,800</div>
-              <a
-                href="https://line.me/ti/p/~kbbattry"
-                target="_blank"
-                rel="noopener noreferrer"
-                onClick={(e) => handleConversion(e, "https://line.me/ti/p/~kbbattry")}
-                className={styles.productButton}
-              >
-                สอบถามรายละเอียด
+              <a href="tel:0623736168"
+                    onClick={(e) => handleConversion(e, "tel:0623736168")}
+                    className={styles.productButton}>
+                ติดต่อ kbbattry
               </a>
             </div>
             {/* สินค้าชิ้นที่ 2: แบตเตอรี่สำหรับรถยุโรป/Start-Stop (AGM) */}
@@ -141,13 +137,9 @@ export default function HomePageClient({ workImages }: HomePageClientProps) {
                 ทนทานต่อการชาร์จ/คายประจุซ้ำ
               </p>
               <div className={styles.productPrice}>ติดต่อสอบถามเรา</div>
-              <a
-                href="https://line.me/ti/p/~kbbattry"
-                target="_blank"
-                rel="noopener noreferrer"
-                onClick={(e) => handleConversion(e, "https://line.me/ti/p/~kbbattry")}
-                className={styles.productButton}
-              >
+              <a href="tel:0623736168"
+                    onClick={(e) => handleConversion(e, "tel:0623736168")}
+                    className={styles.productButton}>
                 ติดต่อ kbbattry
               </a>
             </div>
@@ -171,13 +163,9 @@ export default function HomePageClient({ workImages }: HomePageClientProps) {
                 ทนทานเป็นพิเศษเพื่อการขนส่งระยะยาว
               </p>
               <div className={styles.productPrice}>ติดต่อสอบถามเรา</div>
-              <a
-                href="https://line.me/ti/p/~kbbattry"
-                target="_blank"
-                rel="noopener noreferrer"
-                onClick={(e) => handleConversion(e, "https://line.me/ti/p/~kbbattry")}
-                className={styles.productButton}
-              >
+              <a href="tel:0623736168"
+                    onClick={(e) => handleConversion(e, "tel:0623736168")}
+                    className={styles.productButton}>
                 ติดต่อ kbbattry
               </a>
             </div>
